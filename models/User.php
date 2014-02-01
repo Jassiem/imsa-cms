@@ -3,8 +3,11 @@
 	class User{
 
 		public $username = null;
-		public $password_hash = null;
+		public $email = null;
+		public $password = null;
 		public $salt = null;
+		//only holds value when new user being crated
+		public $confirm_password = null;
 
 		public function __construct($userParameters = array()) {
 			if( isset( $userParameters['username'] ) ){
@@ -12,6 +15,9 @@
 			}
 			if( isset( $userParameters['password'] ) ){
 				$this->password_hash = $userParameters['password'];
+			}
+			if( isset( $userParameters['email'] ) ){
+				$this->email = $userParameters['email'];
 			}
 		}
 
@@ -34,18 +40,52 @@
 	  	}
 
 	  	public function save( ){
-	  		$encrypted_password = encryptPassword($this->password_hash);
+	  		$encrypted_password = self::encryptPassword($this->password);
 	    	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-	    	$sql = "INSERT INTO TABLE users (username, password_hash, salt) VALUES (:username, :encrypted_password, :salt )";
+	    	$sql = "INSERT INTO users (username, email, password_hash, salt) VALUES (:username, :email, :encrypted_password, :salt )";
 	    	$st = $conn->prepare( $sql );
 
 	    	//bind values
 	    	$st->bindValue( ":username", $this->username, PDO::PARAM_INT );
-	    	$st->bindValue( ":encrypted_password", $encrypted_password, PDO::PARAM_STRING );
-	    	$st->bindValue( ":salt", $this->salt, PDO::PARAM_STRING );
+	    	$st->bindValue( ":email", $this->email, PDO::PARAM_STR );
+	    	$st->bindValue( ":encrypted_password", $encrypted_password, PDO::PARAM_STR );
+	    	$st->bindValue( ":salt", $this->salt, PDO::PARAM_STR );
 
-	    	return $st->execute();
+	    	if($st->execute())
+	    	{
+	    		return true;
+	    	}else{
+	    		print_r($st->errorInfo());
+	    		return false;
+	    	}
 	    	
+	  	}
+
+	  	//checks if object data has errors
+	  	public function hasErrors(){
+	  		$usernameErrors; $emailErrors; $passwordErrors;
+	  		if( $usernameErrors = validateUsername() || $emailErrors = validateEmail() || $passwordErrors = validatePassword()){
+	  			return array( "hasErrors" => true, "errors" => array( "username" => $usernameErrors, "email" => $emailErrors, 
+	  						"passwordErrors" => $passwordErrors ) );
+	  		}
+	  		else{
+	  			return false;
+	  		}
+
+	  	}
+
+	  	private function validateUsername(){
+	  		return filter_var( $this->username, FILTER_VALIDATE_REGEX, array( "options" => array( "regexp" => "/^[a-zA-z]+[0-9]*{5,20}$/" ) ) );
+
+	  	}
+
+	  	private function validateEmail(){
+	  		return filter_var( $this->email, FILTER_VALIDATE_EMAIL );
+	  	}
+
+	  	//check if password and confirm_password are the same
+	  	private function validatePassword(){
+	  		return $this->password === $this->confirm_password;
 	  	}
 
 	  	/**
@@ -56,7 +96,8 @@
 	  	*/
 	  	private function encryptPassword( $password ) {
 	  		//generate random salt
-	  		$salt = mcrypt_create_iv(64, MCRYPT_DEV_URANDOM);
+	  		//$salt = mcrypt_create_iv(64, MCRYPT_DEV_URANDOM);
+	  		$salt = uniqid('', true);
 	  		$this->salt = $salt;
 	  		$encrypted_password = hash("sha256", $salt . $password);
 	  		return $encrypted_password;

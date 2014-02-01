@@ -12,14 +12,17 @@
 			//get data from post array
 			$userParams['username'] = $_POST['username'];
 			$userParams['password'] = $_POST['password'];
+			$userParams['email'] = $_POST['email'];
 
 			$newUser = new User($userParams);
 			//save user
 			if($newUser->save())
 			{
-				//redirect to login and return success
+				$host = $_SERVER['HTTP_ORIGIN'];
+				header("Location: ". $host . "/admin", true, 200);
 			}
 			else{
+				echo 'Failure';
 				//display errors and stay on sign up
 			}
 		}

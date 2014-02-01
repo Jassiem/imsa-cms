@@ -1,6 +1,6 @@
 <?php include "templates/includes/header.php" ?>
  
-  <form action="index.php" method="post" style="width: 50%;">
+  <form action="/user" method="post" style="width: 50%;">
     <input type="hidden" name="newUser" value="true" />
     <ul>
       <li>
@@ -17,7 +17,8 @@
       </li>
       <li>
         <label for="confirm_password"> Confirm Password</label>
-        <input type="passoword" name="confirm_password" id="confirm_password" placeholder="Please confirm password" required maxlength="64"/>
+        <input type="password" name="confirm_password" id="confirm_password" placeholder="Please confirm password" required maxlength="64"/>
+      </li>
     </ul>
     <div class="buttons">
       <input type="submit" name="newUser" value="newUser" />

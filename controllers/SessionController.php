@@ -1,5 +1,5 @@
 <?php
-	//require_once ('models/User.php');
+	require_once ('models/User.php');
 
 	class SessionController{
 		//get login template
@@ -17,7 +17,9 @@
 			if(User::matchPassword($username, $password)){
 				//set session and redirect to admin home
 				$_SESSION['username'] = $username;
-				http_redirect("/admin", array(), true, HTTP_REDIRECT_PERM);
+
+				$host = $_SERVER['HTTP_ORIGIN'];
+				header("Location:". $host . '/admin');
 			}
 			else{
 				//display errors and stay on login page
@@ -28,7 +30,7 @@
 		private function logout() {
 		    unset( $_SESSION['username'] );
 		    //route to index after logout
-		    header( "Location: /admin" );
+		    header( "Location: /admin", true, 200 );
 		}
 	}
 
