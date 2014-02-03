@@ -15,7 +15,7 @@
 	  	'/admin' => 'AdminController',
 
 	  	//get all news snippets or post
-	  	'/news/' => 'NewsController',
+	  	'/news' => 'NewsController',
 	  	//get, put, delete news snippet,
 	  	'/news/:number' => 'NewsController',
 

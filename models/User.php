@@ -4,7 +4,7 @@
 
 		public $username = null;
 		public $email = null;
-		public $password = null;
+		public $password_hash = null;
 		public $salt = null;
 		//only holds value when new user being crated
 		public $confirm_password = null;
@@ -18,6 +18,12 @@
 			}
 			if( isset( $userParameters['email'] ) ){
 				$this->email = $userParameters['email'];
+			}
+			if( isset( $userParameters['salt'] ) ){
+				$this->salt = $userParameters['salt'];
+			}
+			if( isset( $userParameters['password_hash'] ) ){
+				$this->password_hash = $userParameters['password_hash'];
 			}
 		}
 
@@ -40,7 +46,9 @@
 	  	}
 
 	  	public function save( ){
-	  		$encrypted_password = self::encryptPassword($this->password);
+	  		self::generateSalt();
+	  		$encrypted_password = self::encryptPassword($this->salt, $this->password_hash);
+	  		
 	    	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
 	    	$sql = "INSERT INTO users (username, email, password_hash, salt) VALUES (:username, :email, :encrypted_password, :salt )";
 	    	$st = $conn->prepare( $sql );
@@ -88,17 +96,18 @@
 	  		return $this->password === $this->confirm_password;
 	  	}
 
+	  	private function generateSalt(){
+	  		$salt = uniqid('', true);
+	  		$this->salt = $salt;
+	  	}
+
 	  	/**
 		* Encrypts a password using SHA 256
 		*
 		* @param string The unecrypted password.
 		* @return string The encrypted password.
 	  	*/
-	  	private function encryptPassword( $password ) {
-	  		//generate random salt
-	  		//$salt = mcrypt_create_iv(64, MCRYPT_DEV_URANDOM);
-	  		$salt = uniqid('', true);
-	  		$this->salt = $salt;
+	  	private function encryptPassword($salt, $password ) {
 	  		$encrypted_password = hash("sha256", $salt . $password);
 	  		return $encrypted_password;
 	  	}
@@ -106,14 +115,13 @@
 	  	public static function matchPassword( $username, $password ) {
 	  		$user = self::getByUsername( $username );
 
-	    	/*if( $user ){
-	    		$encrypted_login_password = encryptPassword($user.salt, $password);
-	    		return $encrypted_login_password == $user.password_hash;
+	    	if( $user ){
+	    		$encrypted_login_password = self::encryptPassword($user->salt, $password);
+	    		return $encrypted_login_password == $user->password_hash;
 	    	}
 	    	else{
 	    		return false;
-	    	}*/ 
-	    	return true;
+	    	}
 	  	}
  
 	}

@@ -48,20 +48,6 @@ class News
     if ( isset( $data['contents'] ) ) $this->contents = $data['contents'];
   }
  
- 
-  /**
-  * Sets the object's properties using the edit form post values in the supplied array
-  *
-  * @param assoc The form post values
-  */
- 
-  public function storeFormValues ( $params ) {
- 
-    // Store all the parameters
-    $this->__construct( $params );
-  }
- 
- 
   /**
   * Returns an Article object matching the given article ID
   *
@@ -71,7 +57,7 @@ class News
  
   public static function getById( $id ) {
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-    $sql = "SELECT *, UNIX_TIMESTAMP(publicationDate) AS publicationDate FROM articles WHERE id = :id";
+    $sql = "SELECT * FROM news WHERE id = :id";
     $st = $conn->prepare( $sql );
     $st->bindValue( ":id", $id, PDO::PARAM_INT );
     $st->execute();
@@ -106,15 +92,15 @@ class News
  
     // close database connection
     $conn = null;
-    return ( array ( "results" => $list ) );
+    return $list;
   }
  
  
   /**
-  * Inserts the current NewsModel object into the database, and sets its ID property.
+  * Saves the current NewsModel object into the database, and sets its ID property.
   */
  
-  public function insert() {
+  public function save() {
  
     // Does the Article object already have an ID?
     if ( !is_null( $this->id ) ) trigger_error ( "News::insert(): Attempt to insert a News object that already has its ID property set (to $this->id).", E_USER_ERROR );
@@ -131,6 +117,14 @@ class News
 
     //close database connection
     $conn = null;
+
+    //0 is no error
+    if($st->errorCode() == 0){
+      return true;
+    }else{
+      return false;
+    }
+    
   }
  
  
@@ -138,22 +132,29 @@ class News
   * Updates the current News object in the database.
   */
  
-  public function update() {
- 
+  public function update($newData) {
     // make sure object has id
     if ( is_null( $this->id ) ) trigger_error ( "News::update(): Attempt to update a News object that does not have its ID property set.", E_USER_ERROR );
-    
+
     // Update the News object
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
     $sql = "UPDATE news SET title=:title, contents=:contents WHERE id = :id";
     $st = $conn->prepare ( $sql );
 
-    $st->bindValue( ":title", $this->title, PDO::PARAM_STR );
-    $st->bindValue( ":contents", $this->contents, PDO::PARAM_STR );
+    $st->bindValue( ":title", $newData['title'], PDO::PARAM_STR );
+    $st->bindValue( ":contents", $newData['contents'], PDO::PARAM_STR );
     $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
 
     $st->execute();
     $conn = null;
+
+    //make sure row was updated
+    if($st->rowCount() > 0){
+      return true;
+    }else{
+      return false;
+    }
+
   }
  
  
@@ -161,17 +162,20 @@ class News
   * Deletes the current News object from the database.
   */
  
-  public function delete() {
- 
-    // Does the Article object have an ID?
-    if ( is_null( $this->id ) ) trigger_error ( "News::delete(): Attempt to delete a News object that does not have its ID property set.", E_USER_ERROR );
- 
+  public static function delete($id) {
     // Delete the News object
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
     $st = $conn->prepare ( "DELETE FROM news WHERE id = :id LIMIT 1" );
-    $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
+    $st->bindValue( ":id", $id, PDO::PARAM_INT );
     $st->execute();
     $conn = null;
+
+    if($st->rowCount() > 0){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
  
 }

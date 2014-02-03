@@ -3,8 +3,8 @@
   <form action="/login" method="post" style="width: 50%;">
     <input type="hidden" name="login" value="true" />
  
-<?php if ( isset( $results['errorMessage'] ) ) { ?>
-  <div class="errorMessage"><?php echo $results['errorMessage'] ?></div>
+<?php if ( isset( $this->results['errorMessage'] ) ) { ?>
+  <div class="errorMessage"><?php echo $this->results['errorMessage'] ?></div>
 <?php } ?>
   <ul>
 
