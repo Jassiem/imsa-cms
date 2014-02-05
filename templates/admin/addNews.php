@@ -1,7 +1,6 @@
 <?php include "templates/includes/header.php" ?>
  
   <form action="/news" method="post" id='addNewsForm' style="width: 50%;">
-    <input type="hidden" name="news" value="true" />
  
 <?php if ( isset( $this->results['errorMessage'] ) ) { ?>
   <div class="errorMessage"><?php echo $this->results['errorMessage'] ?></div>

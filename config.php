@@ -6,6 +6,7 @@
 	define( "DB_PASSWORD", "imsa2014" );
 	define( "CLASS_PATH", "controllers" );
 	define( "TEMPLATE_PATH", "templates" );
+	define( "UPLOAD_PATH", __DIR__ . '/' ."public/images" );
 	define( "HOMEPAGE_NUM_ARTICLES", 5 );
 	 
 	function handleException( $exception ) {

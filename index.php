@@ -4,21 +4,18 @@
 
 	require_once( "config.php" );
 	require('Toro.php');
-	require_once ('controllers/AdminController.php');
 	require_once ('controllers/SessionController.php');
+	require_once ('controllers/AdminController.php');
 	require_once ('controllers/NewsController.php');
 	require_once ('controllers/UserController.php');
+	require_once ('controllers/SpotlightController.php');
 
 	Toro::serve(array(
 		'/' => 'SessionController',
 		'/login' => 'SessionController',
 	  	'/admin' => 'AdminController',
-
-	  	//get all news snippets or post
 	  	'/news' => 'NewsController',
-	  	//get, put, delete news snippet,
-	  	'/news/:number' => 'NewsController',
-
+	  	'/spotlight' => 'SpotlightController',
 	  	'/user' => 'UserController'
 	  	//'/home' => 'HomeController'
 	));

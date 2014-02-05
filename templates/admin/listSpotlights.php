@@ -1,11 +1,11 @@
 <?php include "templates/includes/header.php" ?>
  
   <div id="adminHeader">
-    <h2>News Admin</h2>
+    <h2>Spotlight List</h2>
     <p>You are logged in as <b><?php echo htmlspecialchars( $_SESSION['username']) ?></b>. <a href="admin.php?action=logout"?>Log out</a></p>
   </div>
 
-  <h1>All News</h1>
+  <h1>All Spotlights</h1>
  
 <?php if ( isset( $results['errorMessage'] ) ) { ?>
   <div class="errorMessage"><?php echo $results['errorMessage'] ?></div>
@@ -18,28 +18,32 @@
  
   <table>
     <tr>
-      <th>Title</th>
-      <th>Contents</th>
+      <th>Image Name</th>
+      <th>Description</th>
+      <th>Info Link </th>
     </tr>
  
-<?php foreach ( $results['news'] as $newsSnippet ) { ?>
+<?php foreach ( $results['spotlights'] as $spotlight ) { ?>
  
   <tr>
-    <td><?php echo $newsSnippet->getTitle(); ?></td>
+    <td><?php echo $spotlight->getImageName(); ?></td>
     <td>
-      <?php echo $newsSnippet->getContents(); ?>
+      <?php echo $spotlight->getDescription(); ?>
     </td>
     <td>
-      <a href="/news?action=edit&amp;newsId=<?php echo $newsSnippet->getId()?>"> Edit </a>
+      <?php echo $spotlight->getInfoLink(); ?>
     </td>
     <td>
-      <a href="/news?action=delete&amp;newsId=<?php echo $newsSnippet->getId()?>"> Delete </a>
+      <a href="/spotlight?action=edit&amp;spotlightId=<?php echo $spotlight->getId()?>"> Edit </a>
+    </td>
+    <td>
+      <a href="/spotlight?action=delete&amp;spotlightId=<?php echo $spotlight->getId()?>"> Delete </a>
     </td>
   </tr>
  
 <?php } ?>
  
   </table>
-  <p><a href="/news?action=addNews">Add a News Snippet</a></p>
+  <p><a href="/spotlight?action=addSpotlight">Add a Spotlight</a></p>
  
 <?php include "templates/includes/footer.php" ?>

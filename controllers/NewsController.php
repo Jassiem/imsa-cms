@@ -42,46 +42,6 @@
 		 
 		}
 		 
-		//edit a news snippet
-		function put() {
-		  	$results = array();
-		  	$results['pageTitle'] = "Edit News Snippet";
-		  	$results['formAction'] = "editNews";
-		 
-		  	if ( isset( $_POST['saveChanges'] ) ) {
-		    	// User has posted the article edit form: save the article changes
-		 
-		    	if ( !$news = News::getById( (int)$_POST['newsId'] ) ) {
-		      		header( "Location: admin.php?error=newsSnippetNotFound" );
-		      		return;
-		    	}
-		 
-		    	$news->storeFormValues( $_POST );
-		    	$news->update();
-		    	header( "Location: admin.php?status=changesSaved" );
-		 
-		  	} elseif ( isset( $_POST['cancel'] ) ) {
-		    	// User has cancelled their edits: return to the article list
-		    	header( "Location: admin.php" );
-		  	} else {
-		    	// User has not posted the article edit form yet: display the form
-		    	$results['news'] = News::getById( (int)$_GET['newsId'] );
-		    	require( TEMPLATE_PATH . "/admin/editNews.php" );
-		  }
-		 
-		}
-		 
-		//remove news snippet from database
-		function delete() {
-		  	if ( !$article = Article::getById( (int)$_GET['articleId'] ) ) {
-		    	header( "Location: admin.php?error=articleNotFound" );
-		    	return;
-		  	}
-		 
-		  	$article->delete();
-		  	header( "Location: admin.php?status=articleDeleted" );
-		}
-		 
 		//list all news snippets
 		function get() {
 			if( isset( $_GET['action'] ) && $_GET['action'] == 'addNews' ){
