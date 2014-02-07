@@ -42,4 +42,4 @@
   </table>
   <p><a href="/news?action=addNews">Add a News Snippet</a></p>
  
-<?php include "templates/includes/footer.php" ?>
+<?php include "templates/includes/adminFooter.php" ?>

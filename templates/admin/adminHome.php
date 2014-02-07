@@ -10,4 +10,4 @@
 </ul>
 
 
-<?php include "templates/includes/footer.php" ?>
+<?php include "templates/includes/adminFooter.php" ?>

@@ -45,4 +45,4 @@
   </table>
   <p><a href="/person?action=addPerson">Add a Person</a></p>
  
-<?php include "templates/includes/footer.php" ?>
+<?php include "templates/includes/adminFooter.php" ?>

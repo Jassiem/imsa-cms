@@ -46,4 +46,4 @@
   </table>
   <p><a href="/spotlight?action=addSpotlight">Add a Spotlight</a></p>
  
-<?php include "templates/includes/footer.php" ?>
+<?php include "templates/includes/adminFooter.php" ?>
