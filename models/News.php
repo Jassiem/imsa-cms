@@ -35,13 +35,11 @@ class News
     return $this->contents;
   }
  
- 
   /**
   * Sets the object's properties using the values in the supplied array
   *
   * @param assoc The property values
   */
- 
   public function __construct( $data=array() ) {
     if ( isset( $data['id'] ) ) $this->id = (int) $data['id'];
     if ( isset( $data['title'] ) ) $this->title = $data['title'];
@@ -54,7 +52,6 @@ class News
   * @param int The news ID
   * @return News|false The article object, or false if the record was not found or there was a problem
   */
- 
   public static function getById( $id ) {
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
     $sql = "SELECT * FROM news WHERE id = :id";
@@ -66,7 +63,6 @@ class News
     if ( $row ) return new News( $row );
   }
  
- 
   /**
   * Returns all (or a range of) Article objects in the DB
   *
@@ -74,7 +70,6 @@ class News
   * @param string Optional column by which to order the articles (default="publicationDate DESC")
   * @return Array|false A two-element array : results => array, a list of Article objects;
   */
- 
   public static function getList( $numRows=10, $order="last_update DESC" ) {
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
     $sql = "SELECT id, title, contents FROM news
@@ -95,13 +90,10 @@ class News
     return $list;
   }
  
- 
   /**
   * Saves the current NewsModel object into the database, and sets its ID property.
   */
- 
   public function save() {
- 
     // Does the Article object already have an ID?
     if ( !is_null( $this->id ) ) trigger_error ( "News::insert(): Attempt to insert a News object that already has its ID property set (to $this->id).", E_USER_ERROR );
  
@@ -127,11 +119,9 @@ class News
     
   }
  
- 
   /**
   * Updates the current News object in the database.
   */
- 
   public function update($newData) {
     // make sure object has id
     if ( is_null( $this->id ) ) trigger_error ( "News::update(): Attempt to update a News object that does not have its ID property set.", E_USER_ERROR );
@@ -157,11 +147,9 @@ class News
 
   }
  
- 
   /**
   * Deletes the current News object from the database.
   */
- 
   public static function delete($id) {
     // Delete the News object
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );

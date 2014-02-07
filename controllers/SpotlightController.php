@@ -13,7 +13,7 @@
 
 				$spotlight = Spotlight::getById($_POST['editId']);
 				if($spotlight->update($newData)){
-					//success message and display all articles
+					//success message and display all spotlights
 					$this->results['successMessage'] = "Spotlight successfully updated";
 					self::listAllSpotlights();
 				}

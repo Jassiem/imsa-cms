@@ -1,10 +1,10 @@
 <?php
 
 	class Spotlight{
-		public $id;
-		public $image_name;
-		public $description;
-		public $info_link;
+		private $id;
+		private $image_name;
+		private $description;
+		private $info_link;
 
 		/*GETTERS*/
 		public function getId(){
@@ -36,7 +36,7 @@
 		}
 
 		/**
-		  * Returns an Article object matching the given article ID
+		  * Returns a Spotlight object matching the given article ID
 		  *
 		  * @param int The spotlight ID
 		  * @return Spotlight|false The spotlight object, or false if the record was not found or there was a problem
@@ -88,10 +88,10 @@
 		 
 		public function save() {
 		 
-		    // Does the Article object already have an ID?
+		    // Does the Spotlight object already have an ID?
 		    if ( !is_null( $this->id ) ) trigger_error ( "Spotlight::insert(): Attempt to insert a Spotlight object that already has its ID property set (to $this->id).", E_USER_ERROR );
 		 
-		    // Insert the News object
+		    // Insert the Spotlight object
 		    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
 		    $sql = "INSERT INTO spotlight ( image_name, description, info_link ) VALUES ( :image_name, :description, :info_link )";
 		    $st = $conn->prepare ( $sql );
@@ -116,14 +116,14 @@
 		 
 		 
 		  /**
-		  * Updates the current News object in the database.
+		  * Updates the current Spotlight object in the database.
 		  */
 		 
 		public function update($newData) {
 		    // make sure object has id
 		    if ( is_null( $this->id ) ) trigger_error ( "Spotlight::update(): Attempt to update a News object that does not have its ID property set.", E_USER_ERROR );
 
-		    // Update the News object
+		    // Update the Spotlight object
 		    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
 		    $sql = "UPDATE spotlight SET description=:description, info_link=:info_link WHERE spotlight_id=:id";
 		    $st = $conn->prepare ( $sql );
@@ -149,7 +149,6 @@
 		*/
 		 
 		public static function delete($id) {
-			//delete the associated image file first
 		    // Delete the Spotlight object
 		    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
 		    $st = $conn->prepare ( "DELETE FROM spotlight WHERE spotlight_id = :id LIMIT 1" );

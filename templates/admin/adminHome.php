@@ -6,7 +6,7 @@
 	<a href='/user'> Add New User </a>
 	<a href='/news'> List all news articles </a>
 	<a href='/spotlight'> List all spotlight information </a>
-	<a href='/people'> List all people </a>
+	<a href='/person'> List all people </a>
 </ul>
 
 
