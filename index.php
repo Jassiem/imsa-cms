@@ -1,9 +1,7 @@
 <?php
-	//session_start();
-	error_reporting( E_ALL );
-
 	require_once( "config.php" );
 	require('Toro.php');
+
 	require_once ('controllers/SessionController.php');
 	require_once ('controllers/AdminController.php');
 	require_once ('controllers/NewsController.php');
@@ -20,6 +18,10 @@
 	  	'/spotlight' => 'SpotlightController',
 	  	'/person' => 'PersonController',
 	  	'/user' => 'UserController',
-	  	'/home' => 'HomeController'
+	  	'/home' => 'HomeController',
+	  	'/location' => 'LocationController',
+	  	'/people' => 'PeopleController',
+	  	'/research' => 'ResearchController',
+	  	'/affiliates' => 'AffiliateController'
 	));
 ?>

@@ -1,7 +1,12 @@
-<?php include "templates/includes/header.php" ?>
+<?php include( TEMPLATE_PATH . '/includes/header.php' ); ?>
  
   <form action="/user" method="post" style="width: 50%;">
     <input type="hidden" name="newUser" value="true" />
+
+    <?php if ( isset( $this->pageInformation['errorMessage'] ) ) { ?>
+      <div class="errorMessage"><?php echo $this->pageInformation['errorMessage'] ?></div>
+    <?php } ?>
+
     <ul>
       <li>
         <label for="username">Username</label>
@@ -25,4 +30,4 @@
     </div>
   </form>
  
-<?php include "templates/includes/adminFooter.php" ?>
+<?php include ( TEMPLATE_PATH . '/includes/adminFooter.php'); ?>

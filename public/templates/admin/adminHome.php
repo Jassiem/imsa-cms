@@ -1,4 +1,4 @@
-<?php include "templates/includes/header.php" ?>
+<?php include( TEMPLATE_PATH . '/includes/header.php' ); ?>
 
 <h1> Welcome to the IMSA Admin Home Page </h1>
 
@@ -10,4 +10,4 @@
 </ul>
 
 
-<?php include "templates/includes/adminFooter.php" ?>
+<?php include ( TEMPLATE_PATH . '/includes/adminFooter.php'); ?>

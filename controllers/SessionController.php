@@ -3,12 +3,13 @@
 	session_start();
 
 	class SessionController{
-		private $results;
+		private $pageInformation;
+
 		//get login template
 		function get(){
 			//set page title for template
-			$results['pageTitle'] = 'Login';
-			include('templates/admin/loginForm.php');
+			$pageInfo['pageTitle'] = 'Login';
+			include( TEMPLATE_PATH . '/admin/loginForm.php' );
 		}
 
 		//login user and store id in session
@@ -26,16 +27,19 @@
 			}
 			else{
 				//display errors and stay on login page
-				$this->results['errorMessage'] = 'Invalid login information.';
-				include('templates/admin/loginForm.php');
+				$this->pageInformation['errorMessage'] = 'Invalid login information.';
+				$pageInfo['pageTitle'] = 'Login';
+				include( TEMPLATE_PATH . '/admin/loginForm.php' );
 			}
 		}
 
 		private function logout() {
 		    unset( $_SESSION['username'] );
 		    session_destroy();
+
+		    $host = $_SERVER['HTTP_ORIGIN'];
 		    //route to imsa home page after logout
-		    header( "Location: /admin", true, 200 );
+		    header( 'Location:'. $host. '/home', true, 200 );
 		}
 	}
 

@@ -11,6 +11,7 @@
 			$spotlight = Spotlight::getSpotlights(1);
 			$spotlight = $spotlight[0];
 
+			$pageInfo['pageTitle'] = 'Home';
 			include(TEMPLATE_PATH . '/home.php');
 		}
 	}

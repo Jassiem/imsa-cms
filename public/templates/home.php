@@ -3,14 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>IMSA</title>
-	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../css/layout.css">
-	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/index.css">
 </head>
 
 <body>
 	<div class="wrapper">
-
+		<!--NAVIGATION-->
 		<?php include(TEMPLATE_PATH . '/includes/navigation.php');?>
 
 		<div class="columns-container">
@@ -38,7 +38,7 @@
 				<div class="right-list-column">
 					<h2 class="list-group-heading"> Spotlight </h2>
 					<ul class="list-group spotlight">
-						<li class="list-group-item spotlight-image-item"> <a href="<?php echo $spotlight->getInfoLink(); ?>"> <img class="spotlight-image" src="../public/images/<?php echo $spotlight->getImageName(); ?>"> </a></li>
+						<li class="list-group-item spotlight-image-item"> <a href="<?php echo $spotlight->getInfoLink(); ?>"> <img class="spotlight-image" src="<?php echo ASSET_PATH;?>/images/<?php echo $spotlight->getImageName(); ?>"> </a></li>
 						<li class="list-group-item spotlight-text"> <p> <?php echo $spotlight->getDescription(); ?></p> </li>
 					</ul>
 				</div>
@@ -61,10 +61,9 @@
 		<div class="right-column"s>
 			<h2 class="list-group-heading"> Sponsors </h2>
 			<div class="sponsor-div">
-				<a class=""><img src="../images/nsf1.gif" alt="NSF Logo">
+				<a class=""><img src="<?php echo ASSET_PATH;?>/images/nsf1.gif" alt="NSF Logo">
 			</div>
 		</div>
 	</div>
+	<!--FOOTER-->
 	<?php include(TEMPLATE_PATH . '/includes/footer.php'); ?>
-</body>
-</html>

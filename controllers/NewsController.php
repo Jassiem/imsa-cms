@@ -2,7 +2,7 @@
 	require_once ( "models/News.php" );
 
 	class NewsController{
-		public $results;
+		private $pageInformation;
 
 		//add new news snippet to database
 		function post() {
@@ -14,11 +14,11 @@
 				$newsSnippet = News::getById($_POST['editId']);
 				if($newsSnippet->update($newData)){
 					//success message and display all articles
-					$this->results['successMessage'] = "News successfully updated";
+					$this->pageInformation['successMessage'] = "News successfully updated";
 					self::listNewsSnippets();
 				}
 				else{
-					$this->results['errorMessage'] = 'Unable to update news snippet.';
+					$this->pageInformation['errorMessage'] = 'Unable to update news snippet.';
 					include( TEMPLATE_PATH . '/admin/editNews.php' );
 				}
 			}
@@ -31,11 +31,11 @@
 
 		    	if($newsSnippet->save()){
 		    		//display success message and list all snippets
-		    		$this->results['successMessage'] = 'News successfully added.';
+		    		$this->pageInformation['successMessage'] = 'News successfully added.';
 		    		self::listNewsSnippets();
 		    	}else{
 		    		//display error message and go to add page
-		    		$this->results['errorMessage'] = 'Unable to add news snippet.';
+		    		$this->pageInformation['errorMessage'] = 'Unable to add news snippet.';
 		    		include( TEMPLATE_PATH . '/admin/addNews.php' );
 		    	}
 		    }
@@ -45,7 +45,7 @@
 		//list all news snippets
 		function get() {
 			if( isset( $_GET['action'] ) && $_GET['action'] == 'addNews' ){
-				$results['pageTitle'] = 'Add News';
+				$pageInfo['pageTitle'] = 'Add News';
 				include( TEMPLATE_PATH . "/admin/addNews.php" );
 			}
 			else if( isset( $_GET['action'] ) && $_GET['action'] == 'edit' ){
@@ -53,10 +53,10 @@
 			}
 			else if( isset( $_GET['action'] ) && $_GET['action'] == 'delete' ){
 				if(News::delete($_GET['newsId'])){
-					$this->results['successMessage'] = 'News snippet successfully deleted';
+					$this->pageInformation['successMessage'] = 'News snippet successfully deleted';
 				}
 				else{
-					$this->results['errorMessage'] = 'Unable to delete news snippet.';
+					$this->pageInformation['errorMessage'] = 'Unable to delete news snippet.';
 				}
 				self::listNewsSnippets();
 			}
@@ -73,7 +73,7 @@
 		  	$results['news'] = $data;
 
 		 	// render template
-		  	$results['pageTitle'] = "All News Snippets";
+		  	$pageInfo['pageTitle'] = "All News Snippets";
 		  	include( TEMPLATE_PATH . "/admin/listNews.php" );
 		}
 
@@ -83,7 +83,7 @@
 			$newsId = $_GET['newsId'];
 			$newsSnippet = News::getById($newsId);
 
-			$results['pageTitle'] = 'Edit Page';
+			$pageInfo['pageTitle'] = 'Edit Page';
 			include( TEMPLATE_PATH . '/admin/editNews.php' );
 		}
 

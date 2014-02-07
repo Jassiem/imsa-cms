@@ -2,9 +2,10 @@
 	require_once( "models/User.php" );
 
 	class UserController{
+		private $pageInformation;
 		//display news user form
 		public function get(){
-			include('templates/admin/newUserForm.php');
+			include( TEMPLATE_PATH . '/admin/newUserForm.php' );
 		}
 
 		//create a new user
@@ -22,8 +23,8 @@
 				header("Location: ". $host . "/admin", true, 200);
 			}
 			else{
-				echo 'Failure';
-				//display errors and stay on sign up
+				$this->pageInformation['errorMessage'] = "Unable to create new user.";
+				include( TEMPLATE_PATH . '/admin/newUserForm.php' );
 			}
 		}
 	}

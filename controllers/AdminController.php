@@ -4,8 +4,8 @@ class AdminController{
    
    //display admin home page
    public function get(){
-   	$results['pageTitle'] = 'Administrator Home';
-    include('templates/admin/adminHome.php');
+   	$pageInfo['pageTitle'] = 'Administrator Home';
+    include( TEMPLATE_PATH . '/admin/adminHome.php' );
    }
 
 }

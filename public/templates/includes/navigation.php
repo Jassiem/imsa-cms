@@ -17,7 +17,7 @@
 
     <ul class="nav navbar-nav">
       <li class="dropdown">
-        <a href="research.html" class="dropdown-toggle" > Research </a>
+        <a href="research.php" class="dropdown-toggle" > Research </a>
         <ul class="dropdown-menu">
           <li><a href="https://sites.google.com/site/clemsondagoba/">Big Data Systems</a></li>
           <li><a href="#">Visualization</a></li>
