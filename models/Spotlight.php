@@ -55,19 +55,16 @@
 		 
 		 
 		/**
-		  * Returns all Spotlight objects in the DB
-		  *
-		  * @param int Optional The number of rows to return (default=all)
-		  * @param string Optional column by which to order the spotlights (default="publicationDate DESC")
-		  * @return Array|false A two-element array : results => array, a list of Spotlight objects;
+		  * Returns specified range of Spotlight objects in the DB
 		*/
 		 
-		public static function getAll( $order="last_update DESC" ) {
+		public static function getSpotlights( $numRows=10, $order="last_update DESC" ) {
 		    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
 		    $sql = "SELECT spotlight_id, image_name, description, info_link FROM spotlight
-		            ORDER BY " . mysql_escape_string($order);
+		            ORDER BY " . mysql_escape_string($order) . " LIMIT :numRows";
 		 
 		    $st = $conn->prepare( $sql );
+		    $st->bindValue( ":numRows", $numRows, PDO::PARAM_INT );
 		    $st->execute();
 		    $list = array();
 		 

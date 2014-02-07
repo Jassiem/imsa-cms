@@ -74,7 +74,7 @@
 		//get all spotlights and display them
 		public function listAllSpotlights(){
 			$results = array();
-		  	$data = Spotlight::getAll();
+		  	$data = Spotlight::getSpotlights();
 		  	$results['spotlights'] = $data;
 
 		 	// render template

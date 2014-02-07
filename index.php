@@ -10,6 +10,7 @@
 	require_once ('controllers/UserController.php');
 	require_once ('controllers/SpotlightController.php');
 	require_once ('controllers/PersonController.php');
+	require_once ('controllers/HomeController.php');
 
 	Toro::serve(array(
 		'/' => 'SessionController',
@@ -18,7 +19,7 @@
 	  	'/news' => 'NewsController',
 	  	'/spotlight' => 'SpotlightController',
 	  	'/person' => 'PersonController',
-	  	'/user' => 'UserController'
-	  	//'/home' => 'HomeController'
+	  	'/user' => 'UserController',
+	  	'/home' => 'HomeController'
 	));
 ?>

@@ -8,20 +8,8 @@ class News
 {
  
   // Properties
- 
-  /**
-  * @var int The news snippet ID from the database
-  */
   private $id = null;
- 
-  /**
-  * @var string Title of news snippet.
-  */
   private $title = null;
- 
-  /**
-  * @var string The HTML content of the article
-  */
   private $contents = null;
 
   /** GETTERS */
@@ -37,8 +25,6 @@ class News
  
   /**
   * Sets the object's properties using the values in the supplied array
-  *
-  * @param assoc The property values
   */
   public function __construct( $data=array() ) {
     if ( isset( $data['id'] ) ) $this->id = (int) $data['id'];
@@ -48,9 +34,6 @@ class News
  
   /**
   * Returns an Article object matching the given article ID
-  *
-  * @param int The news ID
-  * @return News|false The article object, or false if the record was not found or there was a problem
   */
   public static function getById( $id ) {
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
@@ -64,11 +47,7 @@ class News
   }
  
   /**
-  * Returns all (or a range of) Article objects in the DB
-  *
-  * @param int Optional The number of rows to return (default=all)
-  * @param string Optional column by which to order the articles (default="publicationDate DESC")
-  * @return Array|false A two-element array : results => array, a list of Article objects;
+  * Returns a range of News objects in the DB
   */
   public static function getList( $numRows=10, $order="last_update DESC" ) {
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
@@ -94,7 +73,7 @@ class News
   * Saves the current NewsModel object into the database, and sets its ID property.
   */
   public function save() {
-    // Does the Article object already have an ID?
+    // Does the News object already have an ID?
     if ( !is_null( $this->id ) ) trigger_error ( "News::insert(): Attempt to insert a News object that already has its ID property set (to $this->id).", E_USER_ERROR );
  
     // Insert the News object

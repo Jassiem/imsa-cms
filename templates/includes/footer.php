@@ -1,7 +1,12 @@
-    <div id="footer">
-        IMSA &copy; 2014. All rights reserved. <a href="admin.php">Site Admin</a>
-      </div>
- 
-    </div>
+	<div class="footer">
+		<ol class="breadcrumb">
+		  <li><a href="http://www.clemson.edu">Clemson University</a></li>
+		  <li><a href="http://www.clemson.edu/ces/computing/">Clemson School of Computing</a></li>
+		  <li><a href="http://www.clemson.edu/ces"> Clemson College of Engineering and Science</a></li>
+		</ol>
+	</div>
+
+	<script src="js/jquery-2.0.3.min.js"> </script>
+	<script src="bootstrap/js/bootstrap.min.js"> </script>
   </body>
 </html>

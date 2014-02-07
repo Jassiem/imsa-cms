@@ -101,6 +101,7 @@ body{
 .jumbotron{
 	width: 70%;
 	margin: 0 auto;
+	clear: left;
 	float: left;
 	/*background-color: rgba(205, 184, 209, .75)*/;
 	background-color: rgba(219, 218, 217, 0);
