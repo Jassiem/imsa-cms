@@ -21,5 +21,4 @@
 	  	'/user' => 'UserController'
 	  	//'/home' => 'HomeController'
 	));
-
 ?>

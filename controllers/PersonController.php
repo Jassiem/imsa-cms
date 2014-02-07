@@ -42,7 +42,6 @@
 		    		include( TEMPLATE_PATH . '/admin/addPerson.php' );
 		    	}
 		    }
-		 
 		}
 
 		function get() {
@@ -65,7 +64,6 @@
 			else{
 				self::listPeople();
 			}
-
 		}
 
 		//get all people and display them

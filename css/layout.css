@@ -1,0 +1,157 @@
+/*CSS file for elements that will always be common between pages.  
+	e.g. Header, footer, background image, etc...
+*/
+
+/* Header and Nav */
+html{
+  background: url(../images/library\ at\ night\ 2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.page-header img{
+	padding: 5px;
+	margin-top: -15px;
+	width: 80px;
+	height: 60px;
+}
+
+.page-header h1{
+	display: inline;
+	margin-top: -10px;
+}
+
+.page-header a, .page-header a:visited, .page-header a:hover, .page-header a:active{
+	text-decoration: none;
+	color: inherit;
+}
+
+h1 small{
+	display: block;
+	margin: auto 0 20px 40px;
+	font-size: 40%;
+	/*color: #444443;*/
+	color: #000;
+}
+
+nav ul:last-child{
+	margin-right: 5px !important;
+}
+
+.navbar, .page-header, .breacrumb{
+	margin-bottom: 0;
+}
+
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;    
+}
+
+ul.dropdown-menu{
+	margin-left: 10px;
+}
+
+/* Fonts */
+
+@font-face {
+	font-family: 'BebasNeueLight';
+	src: url("../fonts/bebas/BebasNeue Light.otf") format("opentype");
+}
+
+@font-face{
+	font-family: 'BebasNeue';
+	src: url("../fonts/bebas/BebasNeue Regular.otf") format("opentype");
+}
+
+@font-face{
+	font-family: 'GeoSansLight';
+	src: url("../fonts/geo_sans_light/GeosansLight.ttf") format("truetype");
+}
+
+/* Body */
+body{
+	background-color: inherit;
+}
+
+.wrapper{
+	width: 760px;
+	margin: 50px auto 0 auto;
+	text-align: center;
+	background-color: rgba(244, 199, 144, .9);
+	/*background-color: rgba(205, 184, 209, .9);*/
+	color: #000;
+	border-radius: 8px 8px 0 0;
+	overflow: hidden;
+}
+
+.col-md-8, .col-md-4{
+	padding: 0 30px 0 10px;
+}
+
+.navbar{
+	border-radius: 0;
+	font-weight: bold;
+}
+
+.page-header{
+	border-bottom: none;
+}
+
+.jumbotron{
+	width: 70%;
+	margin: 0 auto;
+	float: left;
+	/*background-color: rgba(205, 184, 209, .75)*/;
+	background-color: rgba(219, 218, 217, 0);
+}
+
+.jumbotron p{
+	line-height: 1.5em;
+	letter-spacing: 1px;
+	text-indent: 20px;
+
+	font-family: 'Helvetica', sans-serif;
+	/*color: #262525;*/
+	color: #000;
+	font-size: 14px;
+	margin: 0 0 10px 0;
+}
+
+.jumbotron h1{
+	margin: 0 0 20px 0;
+	font-size: 43px;
+}
+
+.center-justified {
+	text-align: justify;
+	margin: 0 auto;
+	font-weight: normal;
+}
+
+.right-column{
+	float: right;
+	width: 30%;
+}
+
+
+/* Footer */
+
+.footer{
+	clear: both;
+	width: 760px;
+	margin: 0 auto 0 auto;
+}
+
+.breadcrumb{
+	border-radius: 0 0 8px 8px;
+}
+
+.breadcrumb a:link, .breadcrumb a:visited{
+	color: #06043f;
+	font-weight: bold;
+}
+
+.breadcrumb a:hover{
+	color: #428BCA;
+}

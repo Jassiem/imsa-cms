@@ -1,0 +1,87 @@
+.jumbotron p:last-child{
+	font-style: italic;
+	font-size: .75em;
+	margin: 20px 0 -20px 0;
+}
+
+.columns-left{
+	float: left;
+}
+
+.middle-list-column, .right-list-column{
+	float: left;
+}
+
+.right-list-column{
+	width: 475px;
+	max-width: 525px;
+}
+
+.spotlight-text{
+	text-align: justify;
+	margin-top: -15px;
+}
+
+/*.right-list-column > ul > .list-group-item:last-child{
+	display: inline;
+}*/
+
+.list-group-heading{
+	display: inline-block;
+	font-size: 14px;
+	font-family: 'BebasNeue';
+	letter-spacing: 1px;
+}
+
+.list-group{
+	background-color: transparent;
+	border-top: 1px dotted #000;
+}
+
+.list-group-item{
+	background-color: transparent;
+}
+
+.list-group a:visited{
+	color: #000;
+}
+
+.list-group a:hover{
+	color: #555;
+}
+
+.spotlight{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.spotlight-image{
+	width: 80px;
+	height: 60px;
+	float:left;
+}
+
+.jumbotron{
+	padding-top: 0;
+	padding: 0 30px 30px 30px;
+}
+
+.right-column h2{
+	display: block;
+}
+
+.right-column img{
+	padding-top: 50px;
+}
+
+.sponsor-div{
+	text-align: center;
+	margin: 0 auto;
+	font-weight: normal;
+	border-top: 1px dotted #000;
+}
+
+.center-justified{
+	font-size: 12px;
+	border-top: 1px dotted #000;
+}
