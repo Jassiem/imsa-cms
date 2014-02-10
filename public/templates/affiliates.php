@@ -14,35 +14,31 @@
 		<!--NAVIGATION-->
 		<?php include(TEMPLATE_PATH . '/includes/navigation.php');?>
 
-		<div class="row">
-			<div class="col-md-4">
-				<div class="quick-links">
-					<h2> Navigation </h2>
-					<ul>
-						<li> <a href="home.php"> Home </a> </li>
-						<li> <a href="people.php"> People </a> </li>
-					</ul>
-				</div>
-				<div class="general-info">
-					<h2> General Information </h2>
-					<ul>
-						<li> some info </li>
-						<li> some info </li>
-				</div>
-			</div>
+		<!--SIDE-NAVIGATION-->
+		<?php include(TEMPLATE_PATH . '/includes/side-navigation.php'); ?>
 
 			<div class="col-md-8">
-				<h2 class="participant-title"> Companies </h2>
+				<h2 class="participant-title"> People </h2>
 				<div class="col-md-6">
+
+				<?php
+				$counter = 0;
+				foreach($affiliates as $affiliate) {
+					if($counter % 2 == 0) {
+				?>
+
 					<ul class="staff-list">
-						<li> BMW </li>
-						<li> Institue of Computing Ecology </li>
+						<li> <?php echo $affiliate->getCompanyName() ?> </li>
 					</ul>
 				</div>
 				<div class="col-md-6">
+
+					<?php } else { ?>
+
 					<ul class="staff-list">
-						<li> Another Company </li>
+						<li> <?php echo $affiliate->getCompanyName() ?> </li>
 					</ul>
+					<?php } }?>
 				</div>
 			</div>
 
