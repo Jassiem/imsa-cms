@@ -14,7 +14,7 @@
 
       <li>
         <label for='contents'>Contents</label>
-        <textarea row='3' columns='50' name='contents' id='contents' form='addNewsForm' placeholder='Enter news snippet' required maxlength="200"> </textarea>
+        <textarea row='3' columns='50' name='contents' id='contents' form='addNewsForm' placeholder='Enter news snippet. Up to 50 characters' required maxlength="50"> </textarea>
       </li>
 
       <li>

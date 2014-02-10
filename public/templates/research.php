@@ -3,9 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>IMSA</title>
-	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../css/layout.css">
-	<link rel="stylesheet" type="text/css" href="../css/research.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/research.css">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
 			</div>
 		</div>
 		<div class="right-column"s>
-			<a class=""><img src="images/nsf1.gif" alt="NSF Logo"></a>
+			<a class=""><img src="<?php echo ASSET_PATH;?>/images/nsf1.gif" alt="NSF Logo"></a>
 		</div>
 	</div>
 

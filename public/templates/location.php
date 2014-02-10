@@ -3,10 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>IMSA</title>
-	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../css/layout.css">
-	<link rel="stylesheet" type="text/css" href="../css/side-navigation.css">
-	<link rel="stylesheet" type="text/css" href="../css/location.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/side-navigation.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/location.css">
 </head>
 
 <body>

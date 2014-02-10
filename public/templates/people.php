@@ -3,10 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>IMSA</title>
-	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../css/layout.css">
-	<link rel="stylesheet" type="text/css" href="../css/side-navigation.css">
-	<link rel="stylesheet" type="text/css" href="../css/people.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/side-navigation.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/people.css">
 </head>
 
 <body>
@@ -21,20 +21,31 @@
 			<div class="col-md-8">
 				<h2 class="participant-title"> People </h2>
 				<div class="col-md-6">
+
+				<?php
+				$counter = 0;
+				foreach($people as $person) {
+					if($counter % 2 == 0) {
+				?>
+
 					<ul class="staff-list">
-						<li> Amy Apon </li>
-						<li> Director of IMSA </li>
-						<li> <i>Big Data Systems Lab</i> </li>
-						<li> <a href="mailto:aapon@clemson.edu" title="Send email to Amy Apon &gt;">aapon@clemson.edu</a> </li>
+						<li> <?php echo $person->getFirstName() . ' ' . $person->getLastName() ?> </li>
+						<li> <?php echo $person->getTitle() ?> </li>
+						<li> <i> <?php echo $person->getArea()?> </i> </li>
+						<li> <a href="mailto:<?php echo $person->getEmail() ?>"> <?php echo $person->getEmail() ?> </a> </li>
 					</ul>
 				</div>
 				<div class="col-md-6">
+
+					<?php } else { ?>
+
 					<ul class="staff-list">
-						<li> Jassiem Moore </li>
-						<li> Student Developer </li>
-						<li> <i> Big Data Systems Lab</i> </li>
-						<li> <a href="mailto:jassiem@clemson.edu" title="Send email to Jassiem Moore &gt;">jassiem@clemson.edu</a> </li>
+						<li> <?php echo $person->getFirstName() . ' ' . $person->getLastName() ?> </li>
+						<li> <?php echo $person->getTitle() ?> </li>
+						<li> <i> <?php echo $person->getArea()?> </i> </li>
+						<li> <a href="mailto:<?php echo $person->getEmail() ?>"> <?php echo $person->getEmail() ?> </a> </li>
 					</ul>
+					<?php } }?>
 				</div>
 			</div>
 

@@ -19,6 +19,10 @@
 	text-align: left;
 }
 
-.col-md-4{
+/*.col-md-4{
 	border-right: 1px dotted #000;
+}*/
+
+.col-md-8{
+	border-left: 1px dotted #000;
 }
