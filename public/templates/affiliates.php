@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/layout.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/side-navigation.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/people.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/affiliates.css">
 </head>
 
 <body>

@@ -13,6 +13,7 @@
 	require_once ( 'controllers/PeopleController.php' );
 	require_once ( 'controllers/ResearchController.php' );
 	require_once ( 'controllers/AffiliatesController.php' );
+	require_once ( 'controllers/AffiliatesAdminController.php' );
 
 	Toro::serve(array(
 		'/' => 'HomeController',
@@ -26,6 +27,7 @@
 	  	'/location' => 'LocationController',
 	  	'/people' => 'PeopleController',
 	  	'/research' => 'ResearchController',
-	  	'/affiliates' => 'AffiliatesController'
+	  	'/affiliates' => 'AffiliatesController',
+	  	'/affiliates_admin' => 'AffiliatesAdminController'
 	));
 ?>
