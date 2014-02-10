@@ -13,7 +13,7 @@
 }
 
 .right-list-column{
-	width: 559px;
+	width: 550px;
 }
 
 .spotlight-text{
@@ -21,9 +21,9 @@
 	margin-top: -15px;
 }
 
-/*.right-list-column > ul > .list-group-item:last-child{
-	display: inline;
-}*/
+.quick-links{
+	text-align: left;
+}
 
 .list-group-heading{
 	display: inline-block;

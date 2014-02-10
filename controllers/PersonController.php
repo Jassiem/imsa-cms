@@ -4,6 +4,10 @@
 	class PersonController{
 		private $pageInformation;
 
+		function __construct(){
+			ToroHook::add("before_handler", 'SessionController::checkLogin');
+		}
+
 		function post() {
 			//update person
 			if( isset( $_POST['editId'] ) ){

@@ -18,9 +18,9 @@
 
 				<div class="left-list-column">
 					<h2 class="list-group-heading"> Quick Links </h2>
-					<div class="list-group">
-						<a class="list-group-item" href="location.html"> <span class="glyphicon glyphicon-flash"> Location </span> </a>
-						<a class="list-group-item" href="people.html"> <span class="glyphicon glyphicon-flash"> People </span> </a>
+					<div class="list-group quick-links">
+						<a class="list-group-item" href="location.html"> <span class="glyphicon glyphicon-flash"></span>Location</a>
+						<a class="list-group-item" href="people.html"> <span class="glyphicon glyphicon-flash"></span>People</a>
 					</div>
 				</div>
 			</div>
@@ -30,7 +30,9 @@
 					<h2 class="list-group-heading"> Latest News </h2>
 					<ul class="list-group">
 						<?php foreach($newsItems as $newsItem) {?>
-							<li class="list-group-item"> <?php echo $newsItem->getTitle(); ?> </li>
+							<a href="<?php echo $newsItem->getLink() ?>">
+								<li class="list-group-item"> <?php echo $newsItem->getTitle(); ?> </li>
+							</a>
 						<?php } ?>
 					</ul>
 				</div>

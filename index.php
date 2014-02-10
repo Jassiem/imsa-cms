@@ -11,7 +11,7 @@
 	require_once ('controllers/HomeController.php');
 
 	Toro::serve(array(
-		'/' => 'SessionController',
+		'/' => 'HomeController',
 		'/login' => 'SessionController',
 	  	'/admin' => 'AdminController',
 	  	'/news' => 'NewsController',

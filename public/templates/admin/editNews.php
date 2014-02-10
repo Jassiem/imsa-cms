@@ -6,6 +6,7 @@
     <?php if ( isset( $this->pageInformation['errorMessage'] ) ) { ?>
       <div class="errorMessage"><?php echo $this->pageInformation['errorMessage'] ?></div>
     <?php } ?>
+    
     <ul>
 
       <li>
@@ -16,6 +17,11 @@
       <li>
         <label for="contents">Contents</label>
         <textarea row='3' columns='50' name="contents" id="contents" form='editNewsForm' required maxlength="200"><?php echo $newsSnippet->getContents()?> </textarea>
+      </li>
+
+      <li>
+        <label for='link'>Link</label>
+        <input type='text' name='link' id='link' value="<?php echo $newsSnippet->getLink() ?>" required maxlength='255'/>
       </li>
 
     </ul>

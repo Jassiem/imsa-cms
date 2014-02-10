@@ -4,12 +4,17 @@
 	class NewsController{
 		private $pageInformation;
 
+		function __construct(){
+			ToroHook::add("before_handler", 'SessionController::checkLogin');
+		}
+
 		//add new news snippet to database
 		function post() {
 			//update news snippet
 			if( isset( $_POST['editId'] ) ){
-				$newData['title'] = $_POST['title'];
+				$newData['title']    = $_POST['title'];
 				$newData['contents'] = $_POST['contents'];
+				$newData['link']    = $_POST['link'];
 
 				$newsSnippet = News::getById($_POST['editId']);
 				if($newsSnippet->update($newData)){
@@ -25,9 +30,10 @@
 			//create news snippet
 			else{
 		    	// get news snippet data from post array
-		    	$newsData['title'] = $_POST['title'];
-		    	$newsData['contents'] = $_POST['contents'];
-		    	$newsSnippet = new News($newsData);
+				$newsData['title']    = $_POST['title'];
+				$newsData['contents'] = $_POST['contents'];
+				$newsData['link']     = $_POST['link'];
+				$newsSnippet          = new News($newsData);
 
 		    	if($newsSnippet->save()){
 		    		//display success message and list all snippets
@@ -80,7 +86,7 @@
 		//display edit form and populate it with data
 		public function editNewsSnippet(){
 			//get id from $_GET array
-			$newsId = $_GET['newsId'];
+			$newsId      = $_GET['newsId'];
 			$newsSnippet = News::getById($newsId);
 
 			$pageInfo['pageTitle'] = 'Edit Page';

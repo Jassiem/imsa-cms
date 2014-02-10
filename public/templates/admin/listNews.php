@@ -19,15 +19,15 @@
     <tr>
       <th>Title</th>
       <th>Contents</th>
+      <th>Link</th>
     </tr>
  
   <?php foreach ( $results['news'] as $newsSnippet ) { ?>
  
     <tr>
-      <td><?php echo $newsSnippet->getTitle(); ?></td>
-      <td>
-        <?php echo $newsSnippet->getContents(); ?>
-      </td>
+      <td> <?php echo $newsSnippet->getTitle(); ?> </td>
+      <td> <?php echo $newsSnippet->getContents(); ?> </td>
+      <td> <?php echo $newsSnippet->getLink(); ?> </td>
       <td>
         <a href="/news?action=edit&amp;newsId=<?php echo $newsSnippet->getId()?>"> Edit </a>
       </td>

@@ -10,6 +10,7 @@ class News
   // Properties
   private $id = null;
   private $title = null;
+  private $link = null;
   private $contents = null;
 
   /** GETTERS */
@@ -19,6 +20,9 @@ class News
   public function getTitle(){
     return $this->title;
   }
+  public function getLink(){
+    return $this->link;
+  }
   public function getContents(){
     return $this->contents;
   }
@@ -27,8 +31,9 @@ class News
   * Sets the object's properties using the values in the supplied array
   */
   public function __construct( $data=array() ) {
-    if ( isset( $data['id'] ) ) $this->id = (int) $data['id'];
-    if ( isset( $data['title'] ) ) $this->title = $data['title'];
+    if ( isset( $data['id'] ) ) $this->id             = (int) $data['id'];
+    if ( isset( $data['title'] ) ) $this->title       = $data['title'];
+    if ( isset( $data['link'] ) ) $this->link         = $data['link'];
     if ( isset( $data['contents'] ) ) $this->contents = $data['contents'];
   }
  
@@ -37,11 +42,12 @@ class News
   */
   public static function getById( $id ) {
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-    $sql = "SELECT * FROM news WHERE id = :id";
-    $st = $conn->prepare( $sql );
+    $sql  = "SELECT * FROM news WHERE id = :id";
+    $st   = $conn->prepare( $sql );
     $st->bindValue( ":id", $id, PDO::PARAM_INT );
     $st->execute();
-    $row = $st->fetch();
+
+    $row  = $st->fetch();
     $conn = null;
     if ( $row ) return new News( $row );
   }
@@ -51,7 +57,7 @@ class News
   */
   public static function getList( $numRows=10, $order="last_update DESC" ) {
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-    $sql = "SELECT id, title, contents FROM news
+    $sql = "SELECT id, title, link, contents FROM news
             ORDER BY " . mysql_escape_string($order) . " LIMIT :numRows";
  
     $st = $conn->prepare( $sql );
@@ -61,7 +67,7 @@ class News
  
     while ( $row = $st->fetch() ) {
       $newsSnippet = new News( $row );
-      $list[] = $newsSnippet;
+      $list[]      = $newsSnippet;
     }
  
     // close database connection
@@ -78,11 +84,12 @@ class News
  
     // Insert the News object
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-    $sql = "INSERT INTO news ( title, contents ) VALUES ( :title, :contents )";
+    $sql = "INSERT INTO news ( title, contents, link ) VALUES ( :title, :contents, :link )";
     $st = $conn->prepare ( $sql );
 
     $st->bindValue( ":title", $this->title, PDO::PARAM_STR );
     $st->bindValue( ":contents", $this->contents, PDO::PARAM_STR );
+    $st->bindValue( ":link", $this->link, PDO::PARAM_STR );
     $st->execute();
     $this->id = $conn->lastInsertId();
 
@@ -107,11 +114,12 @@ class News
 
     // Update the News object
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-    $sql = "UPDATE news SET title=:title, contents=:contents WHERE id = :id";
-    $st = $conn->prepare ( $sql );
+    $sql  = "UPDATE news SET title=:title, contents=:contents, link=:link WHERE id = :id";
+    $st   = $conn->prepare ( $sql );
 
     $st->bindValue( ":title", $newData['title'], PDO::PARAM_STR );
     $st->bindValue( ":contents", $newData['contents'], PDO::PARAM_STR );
+    $st->bindValue( ":link", $newData['link'], PDO::PARAM_STR );
     $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
 
     $st->execute();
@@ -134,6 +142,7 @@ class News
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
     $st = $conn->prepare ( "DELETE FROM news WHERE id = :id LIMIT 1" );
     $st->bindValue( ":id", $id, PDO::PARAM_INT );
+
     $st->execute();
     $conn = null;
 

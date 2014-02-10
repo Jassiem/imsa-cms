@@ -5,6 +5,10 @@
 
 		private $pageInformation;
 
+		function __construct(){
+			ToroHook::add("before_handler", 'SessionController::checkLogin');
+		}
+
 		function post() {
 			//update spotlight
 			if( isset( $_POST['editId'] ) ){

@@ -3,6 +3,11 @@
 
 	class UserController{
 		private $pageInformation;
+
+		function __construct(){
+			ToroHook::add("before_handler", 'SessionController::checkLogin');
+		}
+
 		//display news user form
 		public function get(){
 			include( TEMPLATE_PATH . '/admin/newUserForm.php' );
