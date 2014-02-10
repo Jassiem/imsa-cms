@@ -43,14 +43,21 @@
 		  */
 		 
 		public static function getById( $id ) {
-		  	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-		    $sql = "SELECT * FROM spotlight WHERE spotlight_id = :id";
-		    $st = $conn->prepare( $sql );
-		    $st->bindValue( ":id", $id, PDO::PARAM_INT );
-		    $st->execute();
-		    $row = $st->fetch();
-		    $conn = null;
-		    if ( $row ) return new Spotlight( $row );
+			try{
+			  	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+			    $sql = "SELECT * FROM spotlight WHERE spotlight_id = :id";
+			    $st = $conn->prepare( $sql );
+			    $st->bindValue( ":id", $id, PDO::PARAM_INT );
+			    $st->execute();
+			    $row = $st->fetch();
+			    $conn = null;
+			    if ( $row ) return new Spotlight( $row );
+			}
+		    catch(PDOException $e){
+		      //log message and then return false
+		      error_log('Unable to connect to the database.  \n' . $e->getMessage());
+		      return new Spotlight();
+		    }
 		}
 		 
 		 
@@ -59,23 +66,30 @@
 		*/
 		 
 		public static function getSpotlights( $numRows=10, $order="last_update DESC" ) {
-		    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-		    $sql = "SELECT spotlight_id, image_name, description, info_link FROM spotlight
-		            ORDER BY " . mysql_escape_string($order) . " LIMIT :numRows";
-		 
-		    $st = $conn->prepare( $sql );
-		    $st->bindValue( ":numRows", $numRows, PDO::PARAM_INT );
-		    $st->execute();
-		    $list = array();
-		 
-		    while ( $row = $st->fetch() ) {
-		      $newsSnippet = new Spotlight( $row );
-		      $list[] = $newsSnippet;
+			try{
+			    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+			    $sql = "SELECT spotlight_id, image_name, description, info_link FROM spotlight
+			            ORDER BY " . mysql_escape_string($order) . " LIMIT :numRows";
+			 
+			    $st = $conn->prepare( $sql );
+			    $st->bindValue( ":numRows", $numRows, PDO::PARAM_INT );
+			    $st->execute();
+			    $list = array();
+			 
+			    while ( $row = $st->fetch() ) {
+			      $newsSnippet = new Spotlight( $row );
+			      $list[] = $newsSnippet;
+			    }
+			 
+			    // close database connection
+			    $conn = null;
+			    return $list;
+			}
+		    catch(PDOException $e){
+		      //log message and then return false
+		      error_log('Unable to connect to the database.  \n' . $e->getMessage());
+		      return array();
 		    }
-		 
-		    // close database connection
-		    $conn = null;
-		    return $list;
 		}
 		 
 		 
@@ -84,61 +98,72 @@
 		  */
 		 
 		public function save() {
-		 
-		    // Does the Spotlight object already have an ID?
-		    if ( !is_null( $this->id ) ) trigger_error ( "Spotlight::insert(): Attempt to insert a Spotlight object that already has its ID property set (to $this->id).", E_USER_ERROR );
-		 
-		    // Insert the Spotlight object
-		    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-		    $sql = "INSERT INTO spotlight ( image_name, description, info_link ) VALUES ( :image_name, :description, :info_link )";
-		    $st = $conn->prepare ( $sql );
+		 	try{
+			    // Does the Spotlight object already have an ID?
+			    if ( !is_null( $this->id ) ) trigger_error ( "Spotlight::insert(): Attempt to insert a Spotlight object that already has its ID property set (to $this->id).", E_USER_ERROR );
+			 
+			    // Insert the Spotlight object
+			    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+			    $sql = "INSERT INTO spotlight ( image_name, description, info_link ) VALUES ( :image_name, :description, :info_link )";
+			    $st = $conn->prepare ( $sql );
 
-		    $st->bindValue( ":image_name", $this->image_name, PDO::PARAM_STR );
-		    $st->bindValue( ":description", $this->description, PDO::PARAM_STR );
-		    $st->bindValue( ":info_link", $this->info_link, PDO::PARAM_STR );
-		    $st->execute();
-		    $this->id = $conn->lastInsertId();
+			    $st->bindValue( ":image_name", $this->image_name, PDO::PARAM_STR );
+			    $st->bindValue( ":description", $this->description, PDO::PARAM_STR );
+			    $st->bindValue( ":info_link", $this->info_link, PDO::PARAM_STR );
+			    $st->execute();
+			    $this->id = $conn->lastInsertId();
 
-		    //close database connection
-		    $conn = null;
+			    //close database connection
+			    $conn = null;
 
-		    //0 is no error
-		    if($st->errorCode() == 0){
-		      return true;
-		    }else{
+			    //0 is no error
+			    if($st->errorCode() == 0){
+			      return true;
+			    }else{
+			      return false;
+			    }
+			}
+		    catch(PDOException $e){
+		      //log message and then return false
+		      error_log('Unable to connect to the database.  \n' . $e->getMessage());
 		      return false;
-		    }
-		    
+		    }		
 		}
 		 
 		 
-		  /**
-		  * Updates the current Spotlight object in the database.
-		  */
+		/**
+		* Updates the current Spotlight object in the database.
+		*/
 		 
 		public function update($newData) {
-		    // make sure object has id
-		    if ( is_null( $this->id ) ) trigger_error ( "Spotlight::update(): Attempt to update a News object that does not have its ID property set.", E_USER_ERROR );
+			try{
+			    // make sure object has id
+			    if ( is_null( $this->id ) ) trigger_error ( "Spotlight::update(): Attempt to update a News object that does not have its ID property set.", E_USER_ERROR );
 
-		    // Update the Spotlight object
-		    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-		    $sql = "UPDATE spotlight SET description=:description, info_link=:info_link WHERE spotlight_id=:id";
-		    $st = $conn->prepare ( $sql );
+			    // Update the Spotlight object
+			    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+			    $sql = "UPDATE spotlight SET description=:description, info_link=:info_link WHERE spotlight_id=:id";
+			    $st = $conn->prepare ( $sql );
 
-		    $st->bindValue( ":description", $newData['description'], PDO::PARAM_STR );
-		    $st->bindValue( ":info_link", $newData['info_link'], PDO::PARAM_STR );
-		    $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
+			    $st->bindValue( ":description", $newData['description'], PDO::PARAM_STR );
+			    $st->bindValue( ":info_link", $newData['info_link'], PDO::PARAM_STR );
+			    $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
 
-		    $st->execute();
-		    $conn = null;
+			    $st->execute();
+			    $conn = null;
 
-		    //make sure row was updated
-		    if($st->rowCount() > 0){
-		      return true;
-		    }else{
+			    //make sure row was updated
+			    if($st->rowCount() > 0){
+			      return true;
+			    }else{
+			      return false;
+			    }
+			}
+		    catch(PDOException $e){
+		      //log message and then return false
+		      error_log('Unable to connect to the database.  \n' . $e->getMessage());
 		      return false;
 		    }
-
 		}
 
 		/**
@@ -146,17 +171,24 @@
 		*/
 		 
 		public static function delete($id) {
-		    // Delete the Spotlight object
-		    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-		    $st = $conn->prepare ( "DELETE FROM spotlight WHERE spotlight_id = :id LIMIT 1" );
-		    $st->bindValue( ":id", $id, PDO::PARAM_INT );
-		    $st->execute();
-		    $conn = null;
+			try{
+			    // Delete the Spotlight object
+			    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+			    $st = $conn->prepare ( "DELETE FROM spotlight WHERE spotlight_id = :id LIMIT 1" );
+			    $st->bindValue( ":id", $id, PDO::PARAM_INT );
+			    $st->execute();
+			    $conn = null;
 
-		    if($st->rowCount() > 0){
-		      return true;
-		    }
-		    else{
+			    if($st->rowCount() > 0){
+			      return true;
+			    }
+			    else{
+			      return false;
+			    }
+			}
+		    catch(PDOException $e){
+		      //log message and then return false
+		      error_log('Unable to connect to the database.  \n' . $e->getMessage());
 		      return false;
 		    }
 		}

@@ -35,38 +35,51 @@
 	  	*/
 	 
 	  	public static function getByUsername( $username ) {
-	    	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-	    	$sql = "SELECT * FROM users WHERE username = :username";
-	    	$st = $conn->prepare( $sql );
-	    	$st->bindValue( ":username", $username, PDO::PARAM_INT );
-	    	$st->execute();
-	    	$row = $st->fetch();
-	    	$conn = null;
-	    	if ( $row ) return new User( $row );
+	  		try{
+		    	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+		    	$sql = "SELECT * FROM users WHERE username = :username";
+		    	$st = $conn->prepare( $sql );
+		    	$st->bindValue( ":username", $username, PDO::PARAM_INT );
+		    	$st->execute();
+		    	$row = $st->fetch();
+		    	$conn = null;
+		    	if ( $row ) return new User( $row );
+	    	}
+		    catch(PDOException $e){
+		      //log message and then return false
+		      error_log('Unable to connect to the database.  \n' . $e->getMessage());
+		      return new User();
+		    }
 	  	}
 
 	  	public function save( ){
 	  		self::generateSalt();
 	  		$encrypted_password = self::encryptPassword($this->salt, $this->password_hash);
 	  		
-	    	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-	    	$sql = "INSERT INTO users (username, email, password_hash, salt) VALUES (:username, :email, :encrypted_password, :salt )";
-	    	$st = $conn->prepare( $sql );
+	  		try{
+		    	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+		    	$sql = "INSERT INTO users (username, email, password_hash, salt) VALUES (:username, :email, :encrypted_password, :salt )";
+		    	$st = $conn->prepare( $sql );
 
-	    	//bind values
-	    	$st->bindValue( ":username", $this->username, PDO::PARAM_INT );
-	    	$st->bindValue( ":email", $this->email, PDO::PARAM_STR );
-	    	$st->bindValue( ":encrypted_password", $encrypted_password, PDO::PARAM_STR );
-	    	$st->bindValue( ":salt", $this->salt, PDO::PARAM_STR );
+		    	//bind values
+		    	$st->bindValue( ":username", $this->username, PDO::PARAM_INT );
+		    	$st->bindValue( ":email", $this->email, PDO::PARAM_STR );
+		    	$st->bindValue( ":encrypted_password", $encrypted_password, PDO::PARAM_STR );
+		    	$st->bindValue( ":salt", $this->salt, PDO::PARAM_STR );
 
-	    	if($st->execute())
-	    	{
-	    		return true;
-	    	}else{
-	    		print_r($st->errorInfo());
-	    		return false;
+		    	if($st->execute())
+		    	{
+		    		return true;
+		    	}else{
+		    		print_r($st->errorInfo());
+		    		return false;
+		    	}
 	    	}
-	    	
+		    catch(PDOException $e){
+		      //log message and then return false
+		      error_log('Unable to connect to the database.  \n' . $e->getMessage());
+		      return false;
+		    } 	
 	  	}
 
 	  	//checks if object data has errors
