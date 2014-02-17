@@ -10,41 +10,37 @@
 
 		//create new affiliate
 		function post() {
-	    	// get affiliate data from post array
-			$affiliateData['company_name'] = $_POST['company_name'];
-			$affiliate                     = new Affiliate($affiliateData);
-
-	    	if($affiliate->save()){
-	    		//display success message and list all affiliates
-	    		$this->pageInformation['successMessage'] = 'Affiliate successfully added.';
-	    		self::listAllAffiliates();
-	    	}else{
-	    		//display error message and go to add page
-	    		$this->pageInformation['errorMessage'] = 'Unable to add affiliate.';
-	    		include( TEMPLATE_PATH . '/admin/addAffiliate.php' );
-	    	}
-		 
+		 	createAffiliate();
 		}
 		 
 		//list all affiliates
 		function get() {
 			if( isset( $_GET['action'] ) && $_GET['action'] == 'addAffiliate' ){
-				$pageInfo['pageTitle'] = 'Add Affiliate';
-				include( TEMPLATE_PATH . "/admin/addAffiliate.php" );
+				self::addAffiliate();
 			}
 			else if( isset( $_GET['action'] ) && $_GET['action'] == 'delete' ){
-				if(Affiliate::delete($_GET['affiliateId'])){
-					$this->pageInformation['successMessage'] = 'affiliate successfully deleted';
-				}
-				else{
-					$this->pageInformation['errorMessage'] = 'Unable to delete affiliate.';
-				}
-				self::listAllAffiliates();
+				self::deleteAffiliate();
 			}
 			else{
 				self::listAllAffiliates();
 			}
 
+		}
+
+		public function createAffiliate(){
+	    		// get affiliate data from post array
+			$affiliateData['company_name'] = $_POST['company_name'];
+			$affiliate = new Affiliate($affiliateData);
+
+		    	if($affiliate->save()){
+		    		//display success message and list all affiliates
+		    		$this->pageInformation['successMessage'] = 'Affiliate successfully added.';
+		    		self::listAllAffiliates();
+		    	}else{
+		    		//display error message and go to add page
+		    		$this->pageInformation['errorMessage'] = 'Unable to add affiliate.';
+		    		include( TEMPLATE_PATH . '/admin/addAffiliate.php' );
+		    	}
 		}
 
 		//get all affiliates and display them
@@ -56,6 +52,23 @@
 		 	// render template
 		  	$pageInfo['pageTitle'] = "All affiliates";
 		  	include( TEMPLATE_PATH . "/admin/listAffiliates.php" );
+		}
+
+		//add an affiliate
+		public function addAffiliate(){
+			$pageInfo['pageTitle'] = 'Add Affiliate';
+			include( TEMPLATE_PATH . "/admin/addAffiliate.php" );
+		}
+
+		//delete an affiliate
+		public function deleteAffiliate(){
+			if(Affiliate::delete($_GET['affiliateId'])){
+				$this->pageInformation['successMessage'] = 'affiliate successfully deleted';
+			}
+			else{
+				$this->pageInformation['errorMessage'] = 'Unable to delete affiliate.';
+			}
+			self::listAllAffiliates();
 		}
 }
 

@@ -37,11 +37,7 @@
 
 		/**
 		  * Returns a Spotlight object matching the given article ID
-		  *
-		  * @param int The spotlight ID
-		  * @return Spotlight|false The spotlight object, or false if the record was not found or there was a problem
-		  */
-		 
+		  */		 
 		public static function getById( $id ) {
 			try{
 			  	$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );

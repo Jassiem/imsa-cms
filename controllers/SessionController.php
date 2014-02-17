@@ -19,6 +19,10 @@
 
 		//login user and store id in session
 		function post() {
+			self::login();
+		}
+
+		public function login(){
 			//get username and password from $_POST
 			$username = $_POST['username'];
 			$password = $_POST['password'];
@@ -53,9 +57,8 @@
 		    unset( $_SESSION['username'] );
 		    session_destroy();
 
-		    $host = $_SERVER['HTTP_ORIGIN'];
-		    //route to imsa home page after logout
-		    header( 'Location:'. $host. '/home', true, 200 );
+		    echo '<META HTTP-EQUIV="Refresh" Content="0; URL=/home">';    
+    		    exit; 
 		}
 	}
 

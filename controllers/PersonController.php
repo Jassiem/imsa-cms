@@ -11,40 +11,11 @@
 		function post() {
 			//update person
 			if( isset( $_POST['editId'] ) ){
-				$newData['title'] = $_POST['title'];
-				$newData['area']  = $_POST['area'];
-				$newData['email'] = $_POST['email'];
-
-				$person = Person::getById($_POST['editId']);
-				if($person->update($newData)){
-					//success message and display all articles
-					$this->pageInformation['successMessage'] = "Person successfully updated";
-					self::listPeople();
-				}
-				else{
-					$this->pageInformation['errorMessage'] = 'Unable to update person.';
-					include( TEMPLATE_PATH . '/admin/editPerson.php' );
-				}
+				self::updatePerson();
 			}
 			//create person
 			else{
-		    	// get person data from post array
-				$personData['first_name'] = $_POST['first_name'];
-				$personData['last_name']  = $_POST['last_name'];
-				$personData['title']      = $_POST['title'];
-				$personData['area']       = $_POST['area'];
-				$personData['email']      = $_POST['email'];
-		    	$person = new Person($personData);
-
-		    	if($person->save()){
-		    		//display success message and list all people
-		    		$this->pageInformation['successMessage'] = 'Person successfully added.';
-		    		self::listPeople();
-		    	}else{
-		    		//display error message and go to add page
-		    		$this->pageInformation['errorMessage'] = 'Unable to add person.';
-		    		include( TEMPLATE_PATH . '/admin/addPerson.php' );
-		    	}
+				self::createPerson();
 		    }
 		}
 
@@ -57,13 +28,7 @@
 				self::editPerson();
 			}
 			else if( isset( $_GET['action'] ) && $_GET['action'] == 'delete' ){
-				if(Person::delete($_GET['personId'])){
-					$this->pageInformation['successMessage'] = 'Person successfully deleted';
-				}
-				else{
-					$this->pageInformation['errorMessage'] = 'Unable to delete person.';
-				}
-				self::listPeople();
+				self::deletePerson();
 			}
 			else{
 				self::listPeople();
@@ -81,6 +46,43 @@
 		  	include( TEMPLATE_PATH . "/admin/listPeople.php" );
 		}
 
+		public function createPerson(){
+		    	// get person data from post array
+			$personData['first_name'] = $_POST['first_name'];
+			$personData['last_name']  = $_POST['last_name'];
+			$personData['title']      = $_POST['title'];
+			$personData['area']       = $_POST['area'];
+			$personData['email']      = $_POST['email'];
+		    	$person = new Person($personData);
+
+		    	if($person->save()){
+		    		//display success message and list all people
+		    		$this->pageInformation['successMessage'] = 'Person successfully added.';
+		    		self::listPeople();
+		    	}else{
+		    		//display error message and go to add page
+		    		$this->pageInformation['errorMessage'] = 'Unable to add person.';
+		    		include( TEMPLATE_PATH . '/admin/addPerson.php' );
+		    	}
+		}
+
+		public function updatePerson(){
+			$newData['title'] = $_POST['title'];
+			$newData['area']  = $_POST['area'];
+			$newData['email'] = $_POST['email'];
+
+			$person = Person::getById($_POST['editId']);
+			if($person->update($newData)){
+				//success message and display all articles
+				$this->pageInformation['successMessage'] = "Person successfully updated";
+				self::listPeople();
+			}
+			else{
+				$this->pageInformation['errorMessage'] = 'Unable to update person.';
+				include( TEMPLATE_PATH . '/admin/editPerson.php' );
+			}
+		}
+
 		//display edit form and populate it with data
 		public function editPerson(){
 			//get id from $_GET array
@@ -89,6 +91,16 @@
 
 			$pageInfo['pageTitle'] = 'Edit Page';
 			include( TEMPLATE_PATH . '/admin/editPerson.php' );
+		}
+
+		public function deletePerson(){
+			if(Person::delete($_GET['personId'])){
+				$this->pageInformation['successMessage'] = 'Person successfully deleted';
+			}
+			else{
+				$this->pageInformation['errorMessage'] = 'Unable to delete person.';
+			}
+			self::listPeople();
 		}
 	}
 

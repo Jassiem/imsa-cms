@@ -24,7 +24,7 @@
           <?php if( isset( $_SESSION['username'] ) ) {?>
             <li><a> Hello, <?php echo $_SESSION['username'] ?></a></li>
           <?php }?>
-          <li><a href="/logout">Logout</a></li>
+          <li><a href="/logout?action=logout">Logout</a></li>
         </ul>
 
 	    </nav>

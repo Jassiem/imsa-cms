@@ -15,6 +15,10 @@
 
 		//create a new user
 		public function post(){
+			self::createUser();
+		}
+
+		public function createUser(){
 			//get data from post array
 			$userParams['username'] = $_POST['username'];
 			$userParams['password'] = $_POST['password'];

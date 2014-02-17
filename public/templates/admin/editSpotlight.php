@@ -6,7 +6,7 @@
       <input type="hidden" name="editId" id='editId' value="<?php echo $spotlight->getId()?>" />
    
       <?php if ( isset( $this->pageInformation['errorMessage'] ) ) { ?>
-        <div class="errorMessage"><?php echo $this->pageInformation['errorMessage'] ?></div>
+        <span class="label label-danger"><?php echo $this->pageInformation['errorMessage'] ?></span>
       <?php } ?>
 
       <div class='well well-lg push-left'>

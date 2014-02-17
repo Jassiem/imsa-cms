@@ -5,7 +5,7 @@
     <form action='/affiliates_admin' method='post' id='addAffiliateForm'>
    
       <?php if ( isset( $this->pageInformation['errorMessage'] ) ) { ?>
-        <div class='errorMessage'><?php echo $this->pageInformation['errorMessage'] ?></div>
+        <span class="label label-danger"><?php echo $this->pageInformation['errorMessage'] ?></span>
       <?php } ?>
 
       <div class='well well-lg push-left'>
