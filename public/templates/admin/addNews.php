@@ -20,7 +20,7 @@
 
       <div class='form-group'>
         <span class='input-group-addon control-label' for='contents'>Contents</span>
-        <textarea class='form-control' row='3' columns='50' name='contents' id='contents' form='addNewsForm' placeholder='Enter news snippet. Up to 50 characters' required maxlength="50"> </textarea>
+        <textarea class='form-control' row='3' columns='50' name='contents' id='contents' form='addNewsForm' placeholder='Enter news snippet. Up to 200 characters' required maxlength="200"> </textarea>
       </div>
 
       <div class='form-group'>
