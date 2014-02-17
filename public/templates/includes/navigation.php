@@ -28,6 +28,6 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href='/login'> Admin </a></li>
+      <li><a href='/admin'> Admin </a></li>
     </ul>
 </nav>

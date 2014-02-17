@@ -32,7 +32,6 @@ h1 small{
 	display: block;
 	margin: auto 0 20px 40px;
 	font-size: 40%;
-	/*color: #444443;*/
 	color: #000;
 }
 
@@ -79,7 +78,7 @@ body{
 	margin: 50px auto 0 auto;
 	text-align: center;
 	background-color: rgba(244, 199, 144, .9);
-	/*background-color: rgba(205, 184, 209, .9);*/
+
 	color: #000;
 	border-radius: 8px 8px 0 0;
 	overflow: hidden;
@@ -99,11 +98,7 @@ body{
 }
 
 .jumbotron{
-	width: 70%;
 	margin: 0 auto;
-	clear: left;
-	float: left;
-	/*background-color: rgba(205, 184, 209, .75)*/;
 	background-color: rgba(219, 218, 217, 0);
 }
 
@@ -113,7 +108,6 @@ body{
 	text-indent: 20px;
 
 	font-family: 'Helvetica', sans-serif;
-	/*color: #262525;*/
 	color: #000;
 	font-size: 14px;
 	margin: 0 0 10px 0;
@@ -130,11 +124,12 @@ body{
 	font-weight: normal;
 }
 
-.right-column{
-	float: right;
-	width: 30%;
+.full-width-line{
+	width: 820px;
+	margin-left: 20px;
+	margin-right: 20px;
+	border: 1px dotted #000;
 }
-
 
 /* Footer */
 
