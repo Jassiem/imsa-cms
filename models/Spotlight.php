@@ -198,9 +198,17 @@
 		*
 		*/
 		public static function saveImageFile($fileData){
+			$imageWhiteList = array('jpg', 'jpeg', 'png', 'bmp', 'gif');
 			$fileName = $fileData['name'];
-			$uploadedFile = $fileData['tmp_name'];
 
+			$fileNameParts = explode('.', $fileName);
+			$imageType = end($fileNameParts);
+
+			if(!in_array($imageType, $imageWhiteList)){
+				return false;
+			}
+
+			$uploadedFile = $fileData['tmp_name'];
 			return move_uploaded_file($uploadedFile, UPLOAD_PATH . '/' . $fileName);
 		}
 

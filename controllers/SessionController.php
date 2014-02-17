@@ -7,9 +7,14 @@
 
 		//get login template
 		function get() {
-			//set page title for template
-			$pageInfo['pageTitle'] = 'Login';
-			include( TEMPLATE_PATH . '/admin/loginForm.php' );
+			if( isset( $_GET['action'] ) && $_GET['action'] == 'logout' ){
+				self::logout();
+			}
+			else{
+				//set page title for template
+				$pageInfo['pageTitle'] = 'Login';
+				include( TEMPLATE_PATH . '/admin/loginForm.php' );
+			}
 		}
 
 		//login user and store id in session

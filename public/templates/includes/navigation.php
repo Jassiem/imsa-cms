@@ -28,6 +28,6 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Contact</a></li>
+      <li><a href='/login'> Admin </a></li>
     </ul>
 </nav>

@@ -1,42 +1,51 @@
 <?php include( TEMPLATE_PATH . '/includes/header.php' ); ?>
- 
-  <form action="/person" method="post" id='editPersonForm' style="width: 50%;">
-    <input type="hidden" name="editId" id='editId' value="<?php echo $person->getId()?>" />
- 
-    <?php if ( isset( $this->pageInformation['errorMessage'] ) ) { ?>
-      <div class="errorMessage"><?php echo $this->pageInformation['errorMessage'] ?></div>
-    <?php } ?>
-    <ul>
+ <div class='row'>
+   <div class='col-lg-3'></div>
+   <div class='col-lg-6'>
+    <form action="/person" method="post" id='editPersonForm'>
+      <input type="hidden" name="editId" id='editId' value="<?php echo $person->getId()?>" />
+   
+      <?php if ( isset( $this->pageInformation['errorMessage'] ) ) { ?>
+        <div class="errorMessage"><?php echo $this->pageInformation['errorMessage'] ?></div>
+      <?php } ?>
+      <div class='well well-lg push-left'>
+        <h2> Edit Person </h2>
 
-      <li>
-        <label for="first_name">First Name: <?php echo $person->getFirstName() ?></label>
-      </li>
+        <div class='buffer-20'></div>
+        <div class='buffer-20'></div>
 
-      <li>
-        <label for="last_name">Last Name: <?php echo $person->getLastName() ?></label>
-      </li>
+        <div class='form-group'>
+          <span class='input-group-addon control-label' for="first_name">First Name: <?php echo $person->getFirstName() ?></span>
+        </div>
 
-      <li>
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" value="<?php echo $person->getTitle() ?>" required autofocus maxlength="20" />
-      </li>
+        <div class='form-group'>
+          <span class='input-group-addon control-label' for="last_name">Last Name: <?php echo $person->getLastName() ?></span>
+        </div>
 
-      <li>
-        <label for="area">Area</label>
-        <input type="text" name="area" id="area" value="<?php echo $person->getArea() ?>" required autofocus maxlength="20" />
-      </li>
+        <div class='form-group'>
+          <span class ='input-group-addon control-label' for="title">Title</span>
+          <input class='form-control' type="text" name="title" id="title" value="<?php echo $person->getTitle() ?>" required autofocus maxlength="20" />
+        </div>
 
-      <li>
-        <label for='email'>Email</label>
-        <input type-'email' name='email' id='email' form='addPersonForm' value="<?php echo $person->getEmail() ?>" required maxlength="30"/>
-      </li>
+        <div class='form-group'>
+          <span class ='input-group-addon control-label' for="area">Area</span>
+          <input class='form-control' type="text" name="area" id="area" value="<?php echo $person->getArea() ?>" required autofocus maxlength="20" />
+        </div>
 
-    </ul>
+        <div class='form-group'>
+          <span class ='input-group-addon control-label' for='email'>Email</span>
+          <input class='form-control' type-'email' name='email' id='email' form='addPersonForm' value="<?php echo $person->getEmail() ?>" required maxlength="30"/>
+        </div>
 
-    <div class="buttons">
-      <input type="submit" name="editPerson" value="Submit" />
+        <div class="buttons">
+          <button class='btn btn-primary' type="submit" name="editPerson"> Submit </button>
+        </div>
+
+      </div>
+
+    </form>
     </div>
-
-  </form>
+    <div class='col-lg-3'></div>
+  </div>
  
 <?php include ( TEMPLATE_PATH . '/includes/adminFooter.php'); ?>

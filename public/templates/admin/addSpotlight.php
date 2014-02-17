@@ -20,7 +20,7 @@
 
       <li>
         <label for="info_link"> Link to Spotlight</label>
-        <input type="text" name="info_link" id="info_link" placeholder="Copy spotlight url here" required/>
+        <input type="url" name="info_link" id="info_link" placeholder="Copy spotlight url here" required/>
       </li>
 
     </ul>

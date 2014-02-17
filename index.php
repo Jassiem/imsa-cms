@@ -18,6 +18,7 @@
 	Toro::serve(array(
 		'/' => 'HomeController',
 		'/login' => 'SessionController',
+		'/logout' => 'SessionController',
 	  	'/admin' => 'AdminController',
 	  	'/news' => 'NewsController',
 	  	'/spotlight' => 'SpotlightController',

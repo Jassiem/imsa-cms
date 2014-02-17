@@ -1,35 +1,43 @@
 <?php include( TEMPLATE_PATH . '/includes/header.php' ); ?>
- 
-  <form action="/news" method="post" id='editNewsForm' style="width: 50%;">
-    <input type="hidden" name="editId" id='editId' value="<?php echo $newsSnippet->getId()?>" />
- 
-    <?php if ( isset( $this->pageInformation['errorMessage'] ) ) { ?>
-      <div class="errorMessage"><?php echo $this->pageInformation['errorMessage'] ?></div>
-    <?php } ?>
-    
-    <ul>
+<div class='row'>
+  <div class='col-lg-3'></div>
+    <div class='col-lg-6'>
+      <form action="/news" method="post" id='editNewsForm'>
+        <input type="hidden" name="editId" id='editId' value="<?php echo $newsSnippet->getId()?>" />
+     
+        <?php if ( isset( $this->pageInformation['errorMessage'] ) ) { ?>
+          <div class="errorMessage"><?php echo $this->pageInformation['errorMessage'] ?></div>
+        <?php } ?>
+        
+        <div class='well well-lg push-left'>
+          <h2> Edit News </h2>
 
-      <li>
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" value="<?php echo $newsSnippet->getTitle()?>" required autofocus maxlength="20" />
-      </li>
+          <div class='buffer-20'></div>
+          <div class='buffer-20'></div>
 
-      <li>
-        <label for="contents">Contents</label>
-        <textarea row='3' columns='50' name="contents" id="contents" form='editNewsForm' required maxlength="200"><?php echo $newsSnippet->getContents()?> </textarea>
-      </li>
+          <div class='form-group'>
+            <span class='input-group-addon control-label' for="title">Title</span>
+            <input class='form-control' type="text" name="title" id="title" value="<?php echo $newsSnippet->getTitle()?>" required autofocus maxlength="20" />
+          </div>
 
-      <li>
-        <label for='link'>Link</label>
-        <input type='text' name='link' id='link' value="<?php echo $newsSnippet->getLink() ?>" required maxlength='255'/>
-      </li>
+          <div class='form-group'>
+            <span class='input-group-addon control-label' for="contents">Contents</span>
+            <textarea class='form-control' row='3' columns='50' name="contents" id="contents" form='editNewsForm' required maxlength="200"><?php echo $newsSnippet->getContents()?> </textarea>
+          </div>
 
-    </ul>
+          <div class='form-group'>
+            <span class='input-group-addon control-label' for='link'>Link</span>
+            <input class='form-control' type='url' name='link' id='link' value="<?php echo $newsSnippet->getLink() ?>" required maxlength='255'/>
+          </div>
 
-    <div class="buttons">
-      <input type="submit" name="editNews" value="Submit" />
+          <div class="buttons">
+            <button class='btn btn-primary' type="submit" name="editNews"> Submit</button>
+          </div>
+
+        </div>
+      </form>
     </div>
-
-  </form>
+  <div class='col-lg-3'></div>
+</div>
  
 <?php include ( TEMPLATE_PATH . '/includes/adminFooter.php'); ?>

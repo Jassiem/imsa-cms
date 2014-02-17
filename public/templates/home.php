@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>IMSA</title>
-	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/bootstrap/default/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/layout.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/index.css">
 </head>

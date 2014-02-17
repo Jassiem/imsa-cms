@@ -1,30 +1,35 @@
 <?php include  TEMPLATE_PATH . '/includes/header.php' ?>
- 
-  <form action="/login" method="post" style="width: 50%;">
-    <input type="hidden" name="login" value="true" />
- 
-    <?php if ( isset( $this->pageInformation['errorMessage'] ) ) { ?>
-      <div class="errorMessage"><?php echo $this->pageInformation['errorMessage'] ?></div>
-    <?php } ?>
-    
-    <ul>
+  <div class='row'>
+    <div class='col-lg-3'></div>
+    <div class='col-lg-6'>
+      <form action="/login" class='form-horizontal' method="post">
+        <input type="hidden" name="login" value="true" />
+     
+        <?php if ( isset( $this->pageInformation['errorMessage'] ) ) { ?>
+          <div class="errorMessage"><?php echo $this->pageInformation['errorMessage'] ?></div>
+        <?php } ?>
 
-      <li>
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" placeholder="Your admin username" required autofocus maxlength="20" />
-      </li>
+        <div class='well well-lg push-left'>
+          <h2> Login </h2>
+            <div class='form-group'>
+              <span class='control-label input-group-addon' for="username">Username</span>
+              <input type="text" name="username" id="username" placeholder="Your admin username" class='col-md-8 form-control' required autofocus maxlength="20" />
+            </div>
 
-      <li>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="Your admin password" required maxlength="20" />
-      </li>
+            <div class='form-group'>
+              <span class='input-group-addon control-label' for="password">Password</span>
+              <input type="password" name="password" id="password" placeholder="Your admin password" class='form-control' required maxlength="20" />
+            </div>
 
-    </ul>
+            <div class='buffer-20'> </div>
 
-    <div class="buttons">
-      <input type="submit" name="login" value="Login" />
+            <div class="btn-group">
+              <button class='btn btn-primary btn-default' type='submit'>Submit</button>
+            </div>
+          </div>
+      </form>
     </div>
-
-  </form>
+    <div class='col-lg-3'></div>
+  </div>
  
 <?php include ( TEMPLATE_PATH . '/includes/adminFooter.php') ?>

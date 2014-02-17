@@ -1,44 +1,53 @@
 <?php include( TEMPLATE_PATH . '/includes/header.php' ); ?>
- 
-  <form action="/person" method="post" id='addPersonForm' style="width: 50%;">
- 
-    <?php if ( isset( $this->pageInformation['errorMessage'] ) ) { ?>
-      <div class="errorMessage"><?php echo $this->pageInformation['errorMessage'] ?></div>
-    <?php } ?>
-    
-    <ul>
+  <div class='row'>
+    <div class='col-lg-3'></div>
+    <div class='col-lg-6'>
+    <form action="/person" method="post" id='addPersonForm'>
+   
+      <?php if ( isset( $this->pageInformation['errorMessage'] ) ) { ?>
+        <div class="errorMessage"><?php echo $this->pageInformation['errorMessage'] ?></div>
+      <?php } ?>
+      
+      <div class='well well-lg push-left'>
+        <h2> Add Person </h2>
 
-      <li>
-        <label for="first_name">First Name</label>
-        <input type="text" name="first_name" id="first_name" placeholder="Enter first name" required autofocus maxlength="20" />
-      </li>
+        <div class='buffer-20'></div>
+        <div class='buffer-20'></div>
 
-      <li>
-        <label for="last_name">Last Name</label>
-        <input type="text" name="last_name" id="last_name" placeholder="Enter last name" required autofocus maxlength="20" />
-      </li>
+        <div class='form-group'>
+          <span class='input-group-addon control-label' for="first_name">First Name</span>
+          <input class='form-control' type="text" name="first_name" id="first_name" placeholder="Enter first name" required autofocus pattern="[A-Z][a-z]+" maxlength="20" />
+        </div>
 
-      <li>
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" placeholder="title" required autofocus maxlength="20" />
-      </li>
+        <div class='form-group'>
+          <span class='input-group-addon control-label' for="last_name">Last Name</span>
+          <input class='form-control' type="text" name="last_name" id="last_name" placeholder="Enter last name" required autofocus pattern="[A-Z][a-z]+" maxlength="20" />
+        </div>
 
-      <li>
-        <label for="area">Area</label>
-        <input type="text" name="area" id="area" placeholder="Area" required autofocus maxlength="20" />
-      </li>
+        <div class='form-group'>
+          <span class='input-group-addon control-label' for="title">Title</span>
+          <input class='form-control' type="text" name="title" id="title" placeholder="Enter title" required autofocus maxlength="20" />
+        </div>
 
-      <li>
-        <label for='email'>Email</label>
-        <input type='email' name='email' id='email' placeholder="Enter email" required maxlength="30"/>
-      </li>
+        <div class='form-group'>
+          <span class='input-group-addon control-label' for="area">Area</span>
+          <input class='form-control' type="text" name="area" id="area" placeholder="Enter area" required autofocus maxlength="20" />
+        </div>
 
-    </ul>
+        <div class='form-group'>
+          <span class='input-group-addon control-label' for='email'>Email</span>
+          <input class='form-control' type='email' name='email' id='email' placeholder="Enter email" required maxlength="30"/>
+        </div>
 
-    <div class='buttons'>
-      <input type="submit" name="addPerson" value="Submit" />
+        <div class='buttons'>
+          <button class='btn btn-primary' type="submit" name="addPerson"> Submit </button>
+        </div>
+
+      </div>
+
+    </form>
     </div>
-
-  </form>
+    <div class='col-lg-3'></div>
+  </div>
  
 <?php include ( TEMPLATE_PATH . '/includes/adminFooter.php'); ?>
