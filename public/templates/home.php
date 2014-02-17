@@ -17,7 +17,7 @@
 			<div class='col-lg-3'>
 				<h2 class='list-group-heading'>Quick Links</h2>
 				<div class='full-width-line'></div>
-				<div class="list-group">
+				<div class="list-group quick-links">
 					<a class="list-group-item" href="/location"> <span class="glyphicon glyphicon-flash"></span>Location</a>
 					<a class="list-group-item" href="/people"> <span class="glyphicon glyphicon-flash"></span>People</a>
 				</div>

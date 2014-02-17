@@ -39,6 +39,11 @@
 	font-weight: normal;
 }
 
+.quick-links{
+	text-align: justify;
+	padding-left: 40px;
+}
+
 .center-justified{
 	font-size: 12px;
 }
