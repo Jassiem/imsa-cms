@@ -32,3 +32,10 @@
 .input-group-addon p{
 	font-size: 10px;
 }
+
+.match-anchor-style{
+	position: relative;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	display: block;
+}

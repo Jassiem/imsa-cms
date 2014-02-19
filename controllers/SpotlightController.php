@@ -94,7 +94,7 @@
 			$spotlightId = $_GET['spotlightId'];
 			$spotlight = Spotlight::getById($spotlightId);
 
-			$pageInfo['pageTitle'] = 'Edit Page';
+			$pageInfo['pageTitle'] = 'Edit Spotlight';
 			include( TEMPLATE_PATH . '/admin/editSpotlight.php' );
 		}
 

@@ -10,6 +10,7 @@
 
 		//display news user form
 		public function get(){
+			$pageInfo['pageTitle'] = 'New User';
 			include( TEMPLATE_PATH . '/admin/newUserForm.php' );
 		}
 

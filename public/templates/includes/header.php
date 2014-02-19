@@ -22,7 +22,7 @@
 
         <ul class="nav navbar-nav navbar-right">
           <?php if( isset( $_SESSION['username'] ) ) {?>
-            <li><a> Hello, <?php echo $_SESSION['username'] ?></a></li>
+            <li class='match-anchor-style'> Hello, <?php echo $_SESSION['username'] ?></li>
           <?php }?>
           <li><a href="/logout?action=logout">Logout</a></li>
         </ul>
