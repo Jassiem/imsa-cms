@@ -14,11 +14,12 @@
 		<!--NAVIGATION-->
 		<?php include(TEMPLATE_PATH . '/includes/navigation.php');?>
 
+		<div class='row'>
 		<!--SIDE-NAVIGATION-->
 		<?php include(TEMPLATE_PATH . '/includes/side-navigation.php'); ?>
 
 			<div class="col-md-8">
-				<h2 class="participant-title"> People </h2>
+				<h2 class="participant-title"> Affiliates </h2>
 				<div class="col-md-6">
 
 				<?php
@@ -41,6 +42,7 @@
 					<?php } }?>
 				</div>
 			</div>
+		</div>
 
 		</div>
 

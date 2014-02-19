@@ -10,7 +10,7 @@
 
 		//create new affiliate
 		function post() {
-		 	createAffiliate();
+		 	self::createAffiliate();
 		}
 		 
 		//list all affiliates
