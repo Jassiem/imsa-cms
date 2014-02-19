@@ -4,11 +4,12 @@
 
 /* Header and Nav */
 html{
-  background: url(../images/library\ at\ night\ 2.jpg) no-repeat center center fixed; 
+  /*background: url(../images/library\ at\ night\ 2.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover;*/
+  background-color: #eee;
 }
 
 .page-header img{
@@ -51,6 +52,11 @@ nav ul:last-child{
 	padding-right: 20px;
 }
 
+ul.nav li{
+	border-top: 1px dotted;
+	border-bottom: 1px dotted;
+}
+
 ul.nav li.dropdown:hover > ul.dropdown-menu {
     display: block;    
 }
@@ -82,8 +88,8 @@ body{
 }
 
 .wrapper{
-	width: 860px;
-	margin: 50px auto 0 auto;
+	width: 960px;
+	margin: 0 auto 0 auto;
 	text-align: center;
 	background-color: rgba(244, 199, 144, .9);
 
@@ -133,7 +139,7 @@ body{
 }
 
 .full-width-line{
-	width: 820px;
+	width: 920px;
 	margin-left: 20px;
 	margin-right: 20px;
 	border: 1px dotted #000;
@@ -143,7 +149,7 @@ body{
 
 .footer{
 	clear: both;
-	width: 860px;
+	width: 960px;
 	margin: 0 auto 0 auto;
 }
 

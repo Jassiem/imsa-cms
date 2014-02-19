@@ -3,18 +3,24 @@
 	<h1> <a href="/home">IMSA</a> <small> Modeling, Systems, Analytics, and Visualization </small> </h1>
 </div>
 <nav class="navbar navbar-default" role="navigation">
+    <div class='row'>
+    <div class='col-lg-2'></div>
+    <div class='col-lg-2'>
 
-    <ul class="nav navbar-nav">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" > About </a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Leadership</a></li>
-          <li><a href="/people">People</a></li>
-          <li><a href="/location">Location</a></li>
-        </ul>
-      </li>
-    </ul>
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" > About </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Leadership</a></li>
+            <li><a href="/people">People</a></li>
+            <li><a href="/location">Location</a></li>
+          </ul>
+        </li>
+      </ul>
 
+    </div>
+
+    <div class='col-lg-2'>
     <ul class="nav navbar-nav">
       <li class="dropdown">
         <a href="/research" class="dropdown-toggle" > Research </a>
@@ -24,10 +30,22 @@
           <li><a href="#">Analytics</a></li>
         </ul>
       </li>
-      <li> <a href="/affiliates">Affiliates</a> </li>
-    </ul>
+      </ul>
+      </div>
 
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href='/admin'> Admin </a></li>
-    </ul>
+      <div class='col-lg-2'>
+      <ul class='nav navbar-nav'>
+        <li> <a href="/affiliates">Affiliates</a> </li>
+      </ul>
+      </div>
+
+      <div class='col-lg-2'>
+      <ul class="nav navbar-nav">
+        <li><a href='/admin'> Admin </a></li>
+      </ul>
+      </div>
+
+      <div class='col-lg-2'></div>
+
+    </div>
 </nav>
