@@ -1,5 +1,9 @@
 .right-column{
-	padding-top: 30px;
+    margin-top: -10px;
+}
+
+.row{
+    margin-bottom: 10px;
 }
 
 .right-column a{
