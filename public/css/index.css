@@ -1,12 +1,12 @@
 .jumbotron p:last-child{
 	font-style: italic;
-	font-size: .75em;
+	font-size: .85em;
 	margin: 20px 0 -20px 0;
 }
 
 .list-group-heading{
 	display: inline-block;
-	font-size: 14px;
+	font-size: 18px;
 	font-family: 'BebasNeue';
 	letter-spacing: 1px;
 }
@@ -45,5 +45,5 @@
 }
 
 .center-justified{
-	font-size: 12px;
+	font-size: 16px;
 }
