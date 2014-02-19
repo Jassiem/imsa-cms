@@ -39,8 +39,12 @@ nav ul:last-child{
 	margin-right: 5px !important;
 }
 
-.navbar, .page-header, .breacrumb{
+.page-header, .breacrumb{
 	margin-bottom: 0;
+}
+
+.navbar{
+	margin-bottom: 10px;
 }
 
 .navbar-nav{
@@ -85,7 +89,7 @@ body{
 	width: 860px;
 	margin: 50px auto 0 auto;
 	text-align: center;
-	background-color: rgba(244, 199, 144, .9);
+	background-color: rgba(244, 199, 144, .95);
 
 	color: #000;
 	border-radius: 8px 8px 0 0;
