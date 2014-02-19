@@ -4702,8 +4702,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default {
-  background-color: #555555;
-  border-color: #454545;
+  background-color: #999999;
+  border-color: #888888;
 }
 
 .navbar-default .navbar-brand {
@@ -4726,7 +4726,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #0f0a9f;
+  color: #080657;
   background-color: transparent;
 }
 
@@ -4734,7 +4734,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #06043f;
-  background-color: #454545;
+  background-color: #888888;
 }
 
 .navbar-default .navbar-nav > .disabled > a,
@@ -4759,14 +4759,14 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #454545;
+  border-color: #888888;
 }
 
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   color: #06043f;
-  background-color: #454545;
+  background-color: #888888;
 }
 
 @media (max-width: 767px) {
@@ -4775,14 +4775,14 @@ textarea.input-group-sm > .input-group-btn > .btn {
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #0f0a9f;
+    color: #080657;
     background-color: transparent;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #06043f;
-    background-color: #454545;
+    background-color: #888888;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
@@ -4797,7 +4797,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default .navbar-link:hover {
-  color: #0f0a9f;
+  color: #080657;
 }
 
 .navbar-inverse {
@@ -4909,7 +4909,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   padding: 8px 15px;
   margin-bottom: 20px;
   list-style: none;
-  background-color: #555555;
+  background-color: #999999;
   border-radius: 4px;
 }
 
@@ -4920,7 +4920,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .breadcrumb > li + li:before {
   padding: 0 5px;
   color: #cccccc;
-  content: "/\00a0";
+  content: "--\00a0";
 }
 
 .breadcrumb > .active {

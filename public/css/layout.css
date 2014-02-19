@@ -43,6 +43,14 @@ nav ul:last-child{
 	margin-bottom: 0;
 }
 
+.navbar-nav{
+	padding-left: 20px;
+}
+
+.navbar-right{
+	padding-right: 20px;
+}
+
 ul.nav li.dropdown:hover > ul.dropdown-menu {
     display: block;    
 }
@@ -141,13 +149,15 @@ body{
 
 .breadcrumb{
 	border-radius: 0 0 8px 8px;
+	text-align: center;
 }
 
 .breadcrumb a:link, .breadcrumb a:visited{
 	color: #06043f;
-	font-weight: bold;
+	font-weight: 500;
 }
 
 .breadcrumb a:hover{
-	color: #428BCA;
+	text-decoration: none;
+	color: #06043F;
 }
