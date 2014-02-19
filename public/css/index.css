@@ -8,7 +8,7 @@
 	display: inline-block;
 	font-size: 18px;
 	font-family: 'BebasNeue';
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 }
 
 .list-group, .list-group-item{
@@ -46,4 +46,8 @@
 
 .center-justified{
 	font-size: 16px;
+}
+
+.glyphicon{
+	color: #EA6A20;
 }

@@ -4,12 +4,9 @@
 
 /* Header and Nav */
 html{
-  /*background: url(../images/library\ at\ night\ 2.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;*/
 	background-color: rgb(250, 250, 250);
+	background-color: #393939;
+
 }
 
 .page-header img{
@@ -108,10 +105,9 @@ body{
 	width: 980px;
 	margin: 0 auto 0 auto;
 	text-align: center;
-	background-color: #DADADA;
+	background-color: #eee;
 
 	color: #000;
-	border-radius: 8px 8px 0 0;
 	overflow: hidden;
 }
 
@@ -130,7 +126,7 @@ body{
 
 .jumbotron{
 	margin: 0 auto;
-	background-color: #DADADA;
+	background-color: #eee;
 }
 
 .jumbotron p{
@@ -168,11 +164,11 @@ body{
 	clear: both;
 	width: 980px;
 	margin: 0 auto 0 auto;
-	background-color: #DADADA;
+	background-color: #eee;
 }
 
 .breadcrumb{
-	border-radius: 0 0 8px 8px;
+	border-radius: 0;
 	text-align: center;
 }
 

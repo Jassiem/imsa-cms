@@ -36,7 +36,7 @@
 				<h2 class='list-group-heading'>Spotlight</h2>
 				<div class="list-group">
 					<a class='list-group-item' href="<?php echo $spotlight->getInfoLink(); ?>"> <img class="spotlight-image" src="<?php echo ASSET_PATH;?>/images/<?php echo $spotlight->getImageName(); ?>"> </a></li>
-					<a class='list-group-item' href='<?php echo $spotlight->getInfoLink(); ?>'> <?php echo $spotlight->getDescription(); ?></a>
+					<li class='list-group-item'> <?php echo $spotlight->getDescription(); ?></a>
 				</div>
 			</div>
 		</div>
