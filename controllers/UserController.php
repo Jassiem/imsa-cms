@@ -10,6 +10,7 @@
 
 		//display news user form
 		public function get(){
+			$pageInfo['pageTitle'] = 'Add User';
 			include( TEMPLATE_PATH . '/admin/newUserForm.php' );
 		}
 
@@ -33,6 +34,7 @@
 			}
 			else{
 				$this->pageInformation['errorMessage'] = "Unable to create new user.";
+				$pageInfo['pageTitle'] = 'Add User';
 				include( TEMPLATE_PATH . '/admin/newUserForm.php' );
 			}
 		}

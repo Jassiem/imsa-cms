@@ -32,3 +32,9 @@
 .input-group-addon p{
 	font-size: 10px;
 }
+
+.nav-list-item{
+	position: relative;
+	display: block;
+	padding: 15px 15px;
+}
