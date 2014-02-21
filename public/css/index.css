@@ -1,55 +1,55 @@
 .jumbotron p:last-child{
-	font-style: italic;
-	font-size: .85em;
-	margin: 20px 0 -20px 0;
+  font-style: italic;
+  font-size: .85em;
+  margin: 20px 0 -20px 0;
 }
 
 .list-group-heading{
-	display: inline-block;
-	font-size: 18px;
-	font-family: 'GeoSansLight';
-	color: #521252;
-	letter-spacing: 2px;
-	text-shadow: 0px 2px 3px #882A88;
+  display: inline-block;
+  font-size: 18px;
+  font-family: 'GeoSansLight';
+  color: #521252;
+  letter-spacing: 2px;
+  text-shadow: 0px 2px 3px #882A88;
 }
 
 .list-group, .list-group-item{
-	background-color: transparent;
+  background-color: transparent;
 }
 
 .list-group a:visited{
-	color: #000;
+  color: #000;
 }
 
 .list-group a:hover{
-	color: #999;
+  color: #999;
 }
 
 .spotlight-image{
-	width: 200px;
-	height: 120px;
+  width: 200px;
+  height: 120px;
 }
 
 .jumbotron{
-	padding-top: 0;
-	padding: 0 30px 30px 30px;
+  padding-top: 0;
+  padding: 0 30px 30px 30px;
 }
 
 .sponsor-div{
-	text-align: center;
-	margin: 0 auto;
-	font-weight: normal;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: normal;
 }
 
 .quick-links{
-	text-align: justify;
-	padding-left: 40px;
+  text-align: justify;
+  padding-left: 40px;
 }
 
 .center-justified{
-	font-size: 16px;
+  font-size: 16px;
 }
 
 .glyphicon{
-	color: #EA6A20;
+  color: #EA6A20;
 }

@@ -1,83 +1,83 @@
 /*CSS file for elements that will always be common between pages.  
-	e.g. Header, footer, background image, etc...
+  e.g. Header, footer, background image, etc...
 */
 
 /* Header and Nav */
 html{
-	background-color: rgb(250, 250, 250);
-	background-color: #393939;
+  background-color: rgb(250, 250, 250);
+  background-color: #393939;
 }
 
 .page-header img{
-	padding: 5px;
-	margin-top: -15px;
-	width: 80px;
-	height: 60px;
+  padding: 5px;
+  margin-top: -15px;
+  width: 80px;
+  height: 60px;
 }
 
 .brand-secondary{
-	color: #521252;
+  color: #521252;
 }
 
 .nav-heading{
-	font-family: 'BebasNeueLight';
-	font-weight: 550;
-	font-size: 18px;
+  font-family: 'BebasNeueLight';
+  font-weight: 550;
+  font-size: 18px;
 }
 
 .row{
-	margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .page-header h1{
-	display: inline;
-	margin-top: -10px;
+  display: inline;
+  margin-top: -10px;
 }
 
 .page-header a, .page-header a:visited, .page-header a:hover, .page-header a:active{
-	text-decoration: none;
-	color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 h1 small{
-	display: block;
-	margin: auto 0 20px 40px;
-	font-size: 50%;
-	color: #000;
+  display: block;
+  margin: auto 0 20px 40px;
+  font-size: 50%;
+  color: #000;
 }
 
 nav ul:last-child{
-	margin-right: 5px !important;
+  margin-right: 5px !important;
 }
 
 .navbar, .page-header, .breacrumb{
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .navbar-default{
-	background-color: transparent;
-	border-color: transparent;
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .navbar-default .navbar-nav > li > a{
-	color: #EA6A20;
+  color: #EA6A20;
 }
 
 .navbar-nav{
-	padding-left: 20px;
+  padding-left: 20px;
 }
 
 .navbar-right{
-	padding-right: 20px;
+  padding-right: 20px;
 }
 
 ul.nav > li{
-	border-top: 1px dotted;
-	border-bottom: 1px dotted;
+  border-top: 1px dotted;
+  border-bottom: 1px dotted;
 }
 
 ul.nav > li > a{
-	letter-spacing: 3px;
+  letter-spacing: 3px;
 }
 
 ul.nav li.dropdown:hover > ul.dropdown-menu {
@@ -85,117 +85,117 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 }
 
 ul.dropdown-menu{
-	margin-left: 10px;
+  margin-left: 10px;
 }
 
 /* Fonts */
 
 @font-face {
-	font-family: 'BebasNeueLight';
-	src: url("../fonts/bebas/BebasNeue Light.otf") format("opentype");
+  font-family: 'BebasNeueLight';
+  src: url("../fonts/bebas/BebasNeue Light.otf") format("opentype");
 }
 
 @font-face{
-	font-family: 'BebasNeue';
-	src: url("../fonts/bebas/BebasNeue Regular.otf") format("opentype");
+  font-family: 'BebasNeue';
+  src: url("../fonts/bebas/BebasNeue Regular.otf") format("opentype");
 }
 
 @font-face{
-	font-family: 'GeoSansLight';
-	src: url("../fonts/geo_sans_light/GeosansLight.ttf") format("truetype");
+  font-family: 'GeoSansLight';
+  src: url("../fonts/geo_sans_light/GeosansLight.ttf") format("truetype");
 }
 
 @font-face{
-	font-family: 'Fanwood';
-	src: url("../fonts/fanwood/Fanwood.otf") format("opentype");
+  font-family: 'Fanwood';
+  src: url("../fonts/fanwood/Fanwood.otf") format("opentype");
 }
 
 /* Body */
 body{
-	background-color: inherit;
+  background-color: inherit;
 }
 
 .wrapper{
-	width: 980px;
-	margin: 0 auto 0 auto;
-	text-align: center;
-	background-color: #eee;
+  width: 980px;
+  margin: 0 auto 0 auto;
+  text-align: center;
+  background-color: #eee;
 
-	color: #000;
-	overflow: hidden;
+  color: #000;
+  overflow: hidden;
 }
 
 .col-md-8, .col-md-4{
-	padding: 0 30px 0 10px;
+  padding: 0 30px 0 10px;
 }
 
 .navbar{
-	border-radius: 0;
-	font-weight: bold;
+  border-radius: 0;
+  font-weight: bold;
 }
 
 .page-header{
-	border-bottom: none;
+  border-bottom: none;
 }
 
 .jumbotron{
-	margin: 0 auto;
-	background-color: inherit;
+  margin: 0 auto;
+  background-color: inherit;
 }
 
 .jumbotron p{
-	line-height: 1.6em;
-	letter-spacing: 1.5px;
-	text-indent: 20px;
+  line-height: 1.6em;
+  letter-spacing: 1.5px;
+  text-indent: 20px;
 
-	font-family: 'Fanwood', sans-serif;
-	color: #000;
-	font-size: 16px;
-	margin: 0 0 10px 0;
+  font-family: 'Fanwood', sans-serif;
+  color: #000;
+  font-size: 16px;
+  margin: 0 0 10px 0;
 }
 
 .jumbotron h1{
-	margin: 0 0 20px 0;
-	font-size: 43px;
+  margin: 0 0 20px 0;
+  font-size: 43px;
 }
 
 .center-justified {
-	text-align: justify;
-	margin: 0 auto;
-	font-weight: normal;
+  text-align: justify;
+  margin: 0 auto;
+  font-weight: normal;
 }
 
 .full-width-line{
-	width: 940px;
-	margin-left: 20px;
-	margin-right: 20px;
-	border: 1px dotted #000;
+  width: 940px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 1px dotted #000;
 }
 
 /* Footer */
 
 .footer{
-	clear: both;
-	width: 980px;
-	margin: 0 auto 0 auto;
-	background-color: #eee;
+  clear: both;
+  width: 980px;
+  margin: 0 auto 0 auto;
+  background-color: #eee;
 }
 
 .breadcrumb{
-	border-radius: 0;
-	text-align: center;
+  border-radius: 0;
+  text-align: center;
 }
 
 .breadcrumb{
-	background-color: transparent;
+  background-color: transparent;
 }
 
 .breadcrumb a:link, .breadcrumb a:visited{
-	color: #EA6A20;
-	font-weight: 500;
+  color: #EA6A20;
+  font-weight: 500;
 }
 
 .breadcrumb a:hover{
-	text-decoration: none;
-	color: #06043F;
+  text-decoration: none;
+  color: #06043F;
 }
