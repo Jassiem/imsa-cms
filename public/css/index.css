@@ -7,7 +7,8 @@
 .list-group-heading{
 	display: inline-block;
 	font-size: 18px;
-	font-family: 'BebasNeue';
+	font-family: 'GeoSansLight';
+	color: #521252;
 	letter-spacing: 2px;
 }
 

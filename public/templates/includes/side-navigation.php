@@ -11,8 +11,8 @@
 	<div class='general-info'>
 		<h2> General Information </h2>
 		<ul>
-			<li> some info </li>
-			<li> some info </li>
+			<li> Lorem ipsum dolor sit amet </li>
+			<li> Lorem ipsum dolor sit amet, consectetur adipiscing elit </li>
 		</ul>
 	</div>
 </div>

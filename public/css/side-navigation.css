@@ -17,6 +17,10 @@
 	color: #393939;
 }
 
+.quick-links a:hover, .general-info a:hover{
+	color: #000;
+}
+
 .quick-links h2, .general-info h2{
 	font-size: 16px;
 	border-bottom: 1px dotted #000;
@@ -27,4 +31,9 @@
 .general-info {
 	margin-top: -10px;
 	padding: 20px 20px 20px 0;
+}
+
+.general-info li {
+	font-size: 12px;
+	padding-bottom: 8px;
 }

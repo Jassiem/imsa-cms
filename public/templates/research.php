@@ -14,7 +14,7 @@
 		<?php include(TEMPLATE_PATH . '/includes/navigation.php');?>
 
 		<div class="jumbotron">
-			<h1> Our Research </h1>
+			<h2 class='brand-secondary research-heading'> Our Research </h2>
 			<div class="center-justified">
 				<p>Research thrust areas include information visualization, scientific visualization, Big Data analytics and systems, with application areas that include health, medicine, transportation data systems, simulation and statistical models of complex systems.</p>
 
@@ -25,7 +25,7 @@
 				<p>IMSA employs full time software development professionals who provide expertise and services for paid projects.  IMSA will match projects and programming staff on an on-going basis.  Employment and research experience opportunities are available for students.</p>
 			</div>
 		</div>
-		<div class="right-column"s>
+		<div class="right-column">
 			<a class=""><img src="<?php echo ASSET_PATH;?>/images/nsf1.gif" alt="NSF Logo"></a>
 		</div>
 	</div>

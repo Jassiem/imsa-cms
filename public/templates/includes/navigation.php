@@ -9,7 +9,7 @@
 
       <ul class="nav navbar-nav">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" > About </a>
+          <a href="#" class="dropdown-toggle nav-heading" > About </a>
           <ul class="dropdown-menu">
             <li><a href="#">Leadership</a></li>
             <li><a href="/people">People</a></li>
@@ -23,7 +23,7 @@
     <div class='col-lg-2'>
     <ul class="nav navbar-nav">
       <li class="dropdown">
-        <a href="/research" class="dropdown-toggle" > Research </a>
+        <a href="/research" class="dropdown-toggle nav-heading" > Research </a>
         <ul class="dropdown-menu">
           <li><a href="https://sites.google.com/site/clemsondagoba/">Big Data Systems</a></li>
           <li><a href="#">Visualization</a></li>
@@ -35,13 +35,13 @@
 
       <div class='col-lg-2'>
       <ul class='nav navbar-nav'>
-        <li> <a href="/affiliates">Affiliates</a> </li>
+        <li> <a class='nav-heading' href="/affiliates">Affiliates</a> </li>
       </ul>
       </div>
 
       <div class='col-lg-2'>
       <ul class="nav navbar-nav">
-        <li><a href='/admin'> Admin </a></li>
+        <li><a class='nav-heading' href='/admin'> Admin </a></li>
       </ul>
       </div>
 

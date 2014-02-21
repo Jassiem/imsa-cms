@@ -6,7 +6,6 @@
 html{
 	background-color: rgb(250, 250, 250);
 	background-color: #393939;
-
 }
 
 .page-header img{
@@ -14,6 +13,16 @@ html{
 	margin-top: -15px;
 	width: 80px;
 	height: 60px;
+}
+
+.brand-secondary{
+	color: #521252;
+}
+
+.nav-heading{
+	font-family: 'BebasNeueLight';
+	font-weight: 550;
+	font-size: 18px;
 }
 
 .row{
@@ -96,6 +105,11 @@ ul.dropdown-menu{
 	src: url("../fonts/geo_sans_light/GeosansLight.ttf") format("truetype");
 }
 
+@font-face{
+	font-family: 'Fanwood';
+	src: url("../fonts/fanwood/Fanwood.otf") format("opentype");
+}
+
 /* Body */
 body{
 	background-color: inherit;
@@ -126,15 +140,15 @@ body{
 
 .jumbotron{
 	margin: 0 auto;
-	background-color: #eee;
+	background-color: inherit;
 }
 
 .jumbotron p{
-	line-height: 1.5em;
-	letter-spacing: 1px;
+	line-height: 1.6em;
+	letter-spacing: 1.5px;
 	text-indent: 20px;
 
-	font-family: 'Helvetica', sans-serif;
+	font-family: 'Fanwood', sans-serif;
 	color: #000;
 	font-size: 16px;
 	margin: 0 0 10px 0;
