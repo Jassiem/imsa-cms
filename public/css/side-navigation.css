@@ -1,25 +1,25 @@
 .col-md-4{
-	text-align: left;
-	padding: 0 20px;
+  text-align: left;
+  padding: 0 20px;
 }
 
 .quick-links{
-	margin-bottom: 20px;
-	padding: 20px 20px 20px 0;
+  margin-bottom: 20px;
+  padding: 20px 20px 20px 0;
 }
 
 .quick-links ul, .general-info ul{
-	list-style-type: none;
+  list-style-type: none;
 }
 
 .quick-links h2, .general-info h2{
-	font-size: 16px;
-	border-bottom: 1px dotted #000;
-	width: 100%;
-	margin-top: 16px;
+  font-size: 16px;
+  border-bottom: 1px dotted #000;
+  width: 100%;
+  margin-top: 16px;
 }
 
 .general-info {
-	margin-top: -10px;
-	padding: 20px 20px 20px 0;
+  margin-top: -10px;
+  padding: 20px 20px 20px 0;
 }

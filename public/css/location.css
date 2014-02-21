@@ -1,7 +1,7 @@
 .col-md-8, .col-md-4{
-	text-align: left;
+  text-align: left;
 }
 
 .col-md-8{
-	border-left: 1px dotted #000;
+  border-left: 1px dotted #000;
 }

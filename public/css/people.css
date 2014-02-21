@@ -1,24 +1,24 @@
 .people-column{
-	float: left;
-	width: 25%;
-	margin: 0 25px;
+  float: left;
+  width: 25%;
+  margin: 0 25px;
 }
 
 .staff-list{
-	margin-bottom: 20px;
-	padding-left: 10px;
+  margin-bottom: 20px;
+  padding-left: 10px;
 }
 
 .staff-list li{
-	list-style-type: none;
-	text-align: left;
+  list-style-type: none;
+  text-align: left;
 }
 
 .participant-title{
-	border-bottom: 1px solid #000;
-	text-align: left;
+  border-bottom: 1px solid #000;
+  text-align: left;
 }
 
 .col-md-8{
-	border-left: 1px dotted #000;
+  border-left: 1px dotted #000;
 }

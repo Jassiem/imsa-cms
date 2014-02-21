@@ -1,49 +1,49 @@
 .jumbotron p:last-child{
-	font-style: italic;
-	font-size: .75em;
-	margin: 20px 0 -20px 0;
+  font-style: italic;
+  font-size: .75em;
+  margin: 20px 0 -20px 0;
 }
 
 .list-group-heading{
-	display: inline-block;
-	font-size: 14px;
-	font-family: 'BebasNeue';
-	letter-spacing: 1px;
+  display: inline-block;
+  font-size: 14px;
+  font-family: 'BebasNeue';
+  letter-spacing: 1px;
 }
 
 .list-group, .list-group-item{
-	background-color: transparent;
+  background-color: transparent;
 }
 
 .list-group a:visited{
-	color: #000;
+  color: #000;
 }
 
 .list-group a:hover{
-	color: #555;
+  color: #555;
 }
 
 .spotlight-image{
-	width: 200px;
-	height: 120px;
+  width: 200px;
+  height: 120px;
 }
 
 .jumbotron{
-	padding-top: 0;
-	padding: 0 30px 30px 30px;
+  padding-top: 0;
+  padding: 0 30px 30px 30px;
 }
 
 .sponsor-div{
-	text-align: center;
-	margin: 0 auto;
-	font-weight: normal;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: normal;
 }
 
 .quick-links{
-	text-align: justify;
-	padding-left: 40px;
+  text-align: justify;
+  padding-left: 40px;
 }
 
 .center-justified{
-	font-size: 12px;
+  font-size: 12px;
 }
