@@ -26,7 +26,7 @@
       <tr>
         <td> <?php echo $affiliate->getCompanyName(); ?> </td>
         <td>
-          <a href="/affiliates_admin?action=delete&amp;affiliateId=<?php echo $affiliate->getId()?>"> Delete </a>
+          <a class='delete' href="/affiliates_admin?action=delete&amp;affiliateId=<?php echo $affiliate->getId()?>"> Delete </a>
         </td>
       </tr>
    

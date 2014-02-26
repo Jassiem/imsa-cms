@@ -37,7 +37,7 @@
           <a href="/spotlight?action=edit&amp;spotlightId=<?php echo $spotlight->getId()?>"> Edit </a>
         </td>
         <td>
-          <a href="/spotlight?action=delete&amp;spotlightId=<?php echo $spotlight->getId()?>"> Delete </a>
+          <a class='delete' href="/spotlight?action=delete&amp;spotlightId=<?php echo $spotlight->getId()?>"> Delete </a>
         </td>
       </tr>
    

@@ -33,7 +33,7 @@
           <a href="/news?action=edit&amp;newsId=<?php echo $newsSnippet->getId()?>"> Edit </a>
         </td>
         <td>
-          <a href="/news?action=delete&amp;newsId=<?php echo $newsSnippet->getId()?>"> Delete </a>
+          <a class='delete' href="/news?action=delete&amp;newsId=<?php echo $newsSnippet->getId()?>"> Delete </a>
         </td>
       </tr>
    

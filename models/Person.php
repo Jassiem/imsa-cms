@@ -67,7 +67,7 @@
     public static function getAllPeople( $order="last_name ASC" ) {
       try{
         $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-        $sql = "SELECT * FROM people ORDER BY " . mysql_escape_string($order);
+        $sql = "SELECT * FROM people WHERE is_deleted=0 ORDER BY " . mysql_escape_string($order);
      
         $st = $conn->prepare( $sql );
         $st->execute();
@@ -163,13 +163,12 @@
     }
    
     /**
-    * Deletes the current Person object from the database.
+    * Softly deletes the current Person object from the database.
     */
     public static function delete($id) {
       try{
-        // Delete the Person object
         $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-        $st = $conn->prepare ( "DELETE FROM people WHERE people_id = :id LIMIT 1" );
+        $st = $conn->prepare ( "UPDATE people SET is_deleted = 1 WHERE people_id = :id" );
         $st->bindValue( ":id", $id, PDO::PARAM_INT );
         $st->execute();
         $conn = null;
@@ -180,7 +179,7 @@
         else{
           return false;
         }
-    }
+      }
       catch(PDOException $e){
         //log message and then return false
         error_log('Unable to connect to the database.  \n' . $e->getMessage());
