@@ -79,6 +79,7 @@
       }
       else{
         $this->pageInformation['errorMessage'] = 'Unable to update person.';
+        $pageInfo['pageTitle'] = 'Edit Page';
         include( TEMPLATE_PATH . '/admin/editPerson.php' );
       }
     }

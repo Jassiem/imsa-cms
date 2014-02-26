@@ -37,7 +37,7 @@
           <a href="/person?action=edit&amp;personId=<?php echo $person->getId()?>"> Edit </a>
         </td>
         <td>
-          <a href="/person?action=delete&amp;personId=<?php echo $person->getId()?>"> Delete </a>
+          <a class='delete' href='/person?action=delete&amp;personId=<?php echo $person->getId()?>'> Delete </a>
         </td>
       </tr>
    

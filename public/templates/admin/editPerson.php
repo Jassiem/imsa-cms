@@ -35,7 +35,7 @@
 
         <div class='form-group'>
           <span class ='input-group-addon control-label' for='email'>Email</span>
-          <input class='form-control' type-'email' name='email' id='email' form='addPersonForm' value="<?php echo $person->getEmail() ?>" required maxlength="30"/>
+          <input class='form-control' type='email' name='email' id='email' form='editPersonForm' value="<?php echo $person->getEmail() ?>" required maxlength="30"/>
         </div>
 
         <div class="buttons">

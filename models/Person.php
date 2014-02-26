@@ -137,7 +137,7 @@
 
         // Update the Person object
         $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-        $sql = "UPDATE people SET first_name=:first_name, last_name=:last_name, title=:title, area=:area, email=:email WHERE id = :id";
+        $sql = "UPDATE people SET title=:title, area=:area, email=:email WHERE people_id = :id";
         $st = $conn->prepare ( $sql );
 
         $st->bindValue( ":title", $newData['title'], PDO::PARAM_STR );

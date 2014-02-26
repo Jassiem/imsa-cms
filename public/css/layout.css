@@ -25,6 +25,10 @@ html{
   font-size: 18px;
 }
 
+.navbar-nav > li{
+  float:none;
+}
+
 .row{
   margin-bottom: 40px;
 }
@@ -63,15 +67,7 @@ nav ul:last-child{
   color: #EA6A20;
 }
 
-.navbar-nav{
-  padding-left: 20px;
-}
-
-.navbar-right{
-  padding-right: 20px;
-}
-
-ul.nav > li{
+.nav-link{
   border-top: 1px dotted;
   border-bottom: 1px dotted;
 }

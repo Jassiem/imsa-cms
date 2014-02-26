@@ -38,3 +38,11 @@
   display: block;
   padding: 15px 15px;
 }
+
+.ui-dialog > .ui-widget-header {
+  background: #9447CC;
+  border-color: #9B53CF;
+}
+.ui-button-text{
+  color: black;
+}

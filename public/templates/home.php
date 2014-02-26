@@ -20,6 +20,7 @@
         <div class="list-group quick-links">
           <a class="list-group-item" href="/location"> <span class="glyphicon glyphicon-flash"></span>Location</a>
           <a class="list-group-item" href="/people"> <span class="glyphicon glyphicon-flash"></span>People</a>
+          <a class='list-group-item' href='/admin'> <span class='glyphicon glyphicon-flash'></span>Admin</a>
         </div>
       </div>
 
