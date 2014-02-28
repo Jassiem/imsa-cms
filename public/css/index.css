@@ -50,5 +50,10 @@
 }
 
 .glyphicon{
-  color: #A25016;
+  color: #3A4958;
+}
+
+.col-lg-2{
+  margin-left: 20px;
+  margin-right: -50px;
 }

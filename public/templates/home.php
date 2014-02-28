@@ -18,9 +18,9 @@
         <h2 class='list-group-heading'>Quick Links</h2>
         <div class='full-width-line'></div>
         <div class="list-group quick-links">
-          <a class="list-group-item" href="/location"> <span class="glyphicon glyphicon-flash mini"></span>Location</a>
-          <a class="list-group-item" href="/people"> <span class="glyphicon glyphicon-flash mini"></span>People</a>
-          <a class='list-group-item' href='/admin'> <span class='glyphicon glyphicon-flash mini'></span>Admin</a>
+          <a class="list-group-item" href="/location"> <div class='col-lg-2'><span class="glyphicon glyphicon-hand-right"></span></div>Location</a>
+          <a class="list-group-item" href="/people"> <div class='col-lg-2'><span class="glyphicon glyphicon-hand-right"></span></div>People</a>
+          <a class='list-group-item' href='/admin'> <div class='col-lg-2'> <span class='glyphicon glyphicon-hand-right'></span></div>Admin</a>
         </div>
       </div>
 
