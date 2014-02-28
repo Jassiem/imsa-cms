@@ -31,6 +31,10 @@ html{
   margin-bottom: 10px;
 }
 
+.mini{
+  font-size: 10px;
+}
+
 nav ul:last-child{
   margin-right: 5px !important;
 }
@@ -155,7 +159,7 @@ body{
   clear: both;
   width: 980px;
   margin: 0 auto 0 auto;
-  background-color: #eee;
+  background-color: #fff;
 }
 
 .breadcrumb{
@@ -168,7 +172,7 @@ body{
 }
 
 .breadcrumb a:link, .breadcrumb a:visited{
-  color: #EA6A20;
+  color: #A25016;
   font-weight: 500;
 }
 
