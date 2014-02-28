@@ -1,6 +1,5 @@
 <div class="page-header">
-  <img src="<?php echo ASSET_PATH;?>/images/paw.gif" alt="Clemson Paw Logo">
-  <h1> <a href="/home">IMSA</a> <small> Modeling, Systems, Analytics, and Visualization </small> </h1>
+  <img src="<?php echo ASSET_PATH;?>/images/WebsiteBanner-final.jpg"/>
 </div>
 <nav class="navbar navbar-default" role="navigation">
   <div class='row'>
