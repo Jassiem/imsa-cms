@@ -16,22 +16,22 @@
 
         <div class='form-group'>
           <span class='input-group-addon control-label' for="first_name">First Name</span>
-          <input class='form-control' type="text" name="first_name" id="first_name" placeholder="Enter first name" required autofocus pattern="[A-Z][a-z]+" maxlength="20" />
+          <input class='form-control' type="text" name="first_name" id="first_name" placeholder="Enter first name" required autofocus maxlength="20" />
         </div>
 
         <div class='form-group'>
           <span class='input-group-addon control-label' for="last_name">Last Name</span>
-          <input class='form-control' type="text" name="last_name" id="last_name" placeholder="Enter last name" required autofocus pattern="[A-Z][a-z]+" maxlength="20" />
+          <input class='form-control' type="text" name="last_name" id="last_name" placeholder="Enter last name" required autofocus  maxlength="20" />
         </div>
 
         <div class='form-group'>
           <span class='input-group-addon control-label' for="title">Title</span>
-          <input class='form-control' type="text" name="title" id="title" placeholder="Enter title" required autofocus maxlength="20" />
+          <input class='form-control' type="text" name="title" id="title" placeholder="Enter title" required autofocus maxlength="30" />
         </div>
 
         <div class='form-group'>
           <span class='input-group-addon control-label' for="area">Area</span>
-          <input class='form-control' type="text" name="area" id="area" placeholder="Enter area" required autofocus maxlength="20" />
+          <input class='form-control' type="text" name="area" id="area" placeholder="Enter area" required autofocus maxlength="30" />
         </div>
 
         <div class='form-group'>

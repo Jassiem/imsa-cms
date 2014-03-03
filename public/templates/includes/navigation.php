@@ -1,5 +1,5 @@
 <div class="page-header">
-  <img src="<?php echo ASSET_PATH;?>/images/WebsiteBanner-final.jpg"/>
+  <a href='/home'><img src="<?php echo ASSET_PATH;?>/images/WebsiteBanner-final.jpg"/></a>
 </div>
 <nav class="navbar navbar-default" role="navigation">
   <div class='row'>

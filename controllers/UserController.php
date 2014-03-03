@@ -8,9 +8,9 @@
       ToroHook::add("before_handler", 'SessionController::checkLogin');
     }
 
-    //display news user form
     public function get(){
       $pageInfo['pageTitle'] = 'Add User';
+      // display new user form
       include( TEMPLATE_PATH . '/admin/newUserForm.php' );
     }
 

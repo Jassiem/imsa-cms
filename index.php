@@ -29,6 +29,7 @@
       '/people' => 'PeopleController',
       '/research' => 'ResearchController',
       '/affiliates' => 'AffiliatesController',
-      '/affiliates_admin' => 'AffiliatesAdminController'
+      '/affiliates_admin' => 'AffiliatesAdminController',
+      '/reset-user' => 'UserController'
   ));
 ?>

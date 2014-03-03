@@ -25,12 +25,12 @@
 
         <div class='form-group'>
           <span class ='input-group-addon control-label' for="title">Title</span>
-          <input class='form-control' type="text" name="title" id="title" value="<?php echo $person->getTitle() ?>" required autofocus maxlength="20" />
+          <input class='form-control' type="text" name="title" id="title" value="<?php echo $person->getTitle() ?>" required autofocus maxlength="30" />
         </div>
 
         <div class='form-group'>
           <span class ='input-group-addon control-label' for="area">Area</span>
-          <input class='form-control' type="text" name="area" id="area" value="<?php echo $person->getArea() ?>" required autofocus maxlength="20" />
+          <input class='form-control' type="text" name="area" id="area" value="<?php echo $person->getArea() ?>" required autofocus maxlength="30" />
         </div>
 
         <div class='form-group'>
