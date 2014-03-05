@@ -7,7 +7,7 @@
 .list-group-heading{
   display: inline-block;
   font-size: 18px;
-  font-family: 'GeoSansLight';
+  font-family: Arial, sans-serif;
   color: #A25016;
   letter-spacing: 2px;
 }
@@ -53,7 +53,7 @@
   color: #3A4958;
 }
 
-.col-lg-2{
+.col-xs-2{
   margin-left: 20px;
   margin-right: -50px;
 }

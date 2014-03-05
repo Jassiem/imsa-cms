@@ -1,4 +1,4 @@
-<div class='col-md-4'>
+<div class='col-xs-4 side-navigation'>
   <div class='quick-links'>
     <h2> Navigation </h2>
     <ul>

@@ -18,9 +18,9 @@
     <!--SIDE-NAVIGATION-->
     <?php include(TEMPLATE_PATH . '/includes/side-navigation.php'); ?>
 
-      <div class="col-md-8">
+      <div class="col-xs-8">
         <h2 class="participant-title brand-secondary"> Affiliates </h2>
-        <div class="col-md-6">
+        <div class="col-xs-6">
 
         <?php
         $counter = 0;
@@ -32,7 +32,7 @@
             <li> <?php echo $affiliate->getCompanyName() ?> </li>
           </ul>
         </div>
-        <div class="col-md-6">
+        <div class="col-xs-6">
 
           <?php } else { ?>
 

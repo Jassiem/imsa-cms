@@ -3,20 +3,20 @@
 </div>
 <nav class="navbar navbar-default" role="navigation">
   <div class='row'>
-    <div class='col-lg-6'>
+    <div class='col-xs-6'>
       <div class='row'>
 
-      <div class='col-lg-1'></div>
+      <div class='col-xs-1'></div>
 
-      <div class='col-lg-4 nav-link'>
+      <div class='col-xs-4 nav-link'>
         <ul class="nav navbar-nav nav-justified">
           <li><a class='nav-heading' href='/home'> Home </a></li>
         </ul>
       </div>
 
-      <div class='col-lg-2'></div>
+      <div class='col-xs-2'></div>
 
-      <div class='col-lg-4 nav-link'>
+      <div class='col-xs-4 nav-link'>
         <ul class="nav navbar-nav nav-justified">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle nav-heading" > About </a>
@@ -28,15 +28,15 @@
           </li>
         </ul>
       </div>
-      <div class='col-lg-1'></div>
+      <div class='col-xs-1'></div>
       </div>
     </div>
 
-    <div class='col-lg-6'>
+    <div class='col-xs-6'>
       <div class='row'>
-      <div class='col-lg-1'></div>
+      <div class='col-xs-1'></div>
 
-      <div class='col-lg-4 nav-link'>
+      <div class='col-xs-4 nav-link'>
         <ul class="nav navbar-nav nav-justified">
           <li class="dropdown">
             <a href="/research" class="dropdown-toggle nav-heading" > Research </a>
@@ -49,14 +49,14 @@
         </ul>
       </div>
 
-      <div class='col-lg-2'></div>
+      <div class='col-xs-2'></div>
 
-      <div class='col-lg-4 nav-link'>
+      <div class='col-xs-4 nav-link'>
         <ul class='nav navbar-nav nav-justified'>
           <li> <a class='nav-heading' href="/affiliates">Affiliates</a> </li>
         </ul>
       </div>
-      <div class='col-lg-1'></div>
+      <div class='col-xs-1'></div>
       </div>
     </div>
 

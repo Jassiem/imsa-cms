@@ -18,7 +18,7 @@
       <!--SIDE-NAVIGATION-->
       <?php include( TEMPLATE_PATH . '/includes/side-navigation.php' ); ?>
 
-        <div class="col-md-8">
+        <div class="col-xs-8">
           <h2 class='brand-secondary'> Directions </h2>
           <p> We will get you a visitor parking pass.  There are a few visitor places next to the building which are most likely to be open, and you can park anywhere except handicapped with the pass.  The best way to do this is to call when you are close and someone will meet you in front of the building with the parking pass.  We are in McAdams hall, in the old part, room 221, in the most northwest corner of the building.  It is easiest to come in doors on the west side. </p>
           <h2 class='brand-secondary push-down'> Map </h2>

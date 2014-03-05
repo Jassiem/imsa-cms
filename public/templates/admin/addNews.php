@@ -1,7 +1,7 @@
 <?php include( TEMPLATE_PATH . '/includes/header.php' ); ?>
 <div class='row'>
-  <div class='col-lg-3'></div>
-  <div class='col-lg-6'>
+  <div class='col-xs-3'></div>
+  <div class='col-xs-6'>
   <form action='/news' method='post' id='addNewsForm'>
  
     <?php if ( isset( $this->pageInformation['errorMessage'] ) ) { ?>
@@ -35,7 +35,7 @@
     </div>
   </form>
   </div>
-  <div class='col-lg-3'></div>
+  <div class='col-xs-3'></div>
 </div>
  
 <?php include ( TEMPLATE_PATH . '/includes/adminFooter.php'); ?>

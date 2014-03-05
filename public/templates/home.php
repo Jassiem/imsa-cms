@@ -14,17 +14,17 @@
     <?php include(TEMPLATE_PATH . '/includes/navigation.php');?>
 
     <div class='row'>
-      <div class='col-lg-3'>
+      <div class='col-xs-3'>
         <h2 class='list-group-heading'>Quick Links</h2>
         <div class='full-width-line'></div>
         <div class="list-group quick-links">
-          <a class="list-group-item" href="/location"> <div class='col-lg-2'><span class="glyphicon glyphicon-hand-right"></span></div>Location</a>
-          <a class="list-group-item" href="/people"> <div class='col-lg-2'><span class="glyphicon glyphicon-hand-right"></span></div>People</a>
-          <a class='list-group-item' href='/admin'> <div class='col-lg-2'> <span class='glyphicon glyphicon-hand-right'></span></div>Admin</a>
+          <a class="list-group-item" href="/location"> <div class='col-xs-2'><span class="glyphicon glyphicon-hand-right"></span></div>Location</a>
+          <a class="list-group-item" href="/people"> <div class='col-xs-2'><span class="glyphicon glyphicon-hand-right"></span></div>People</a>
+          <a class='list-group-item' href='/admin'> <div class='col-xs-2'> <span class='glyphicon glyphicon-hand-right'></span></div>Admin</a>
         </div>
       </div>
 
-      <div class='col-lg-4'>
+      <div class='col-xs-4'>
       <h2 class='list-group-heading'>Latest News</h2>
         <div class="list-group">
           <?php foreach($newsItems as $newsItem) {?>
@@ -33,7 +33,7 @@
         </div>
       </div>
 
-      <div class='col-lg-5'>
+      <div class='col-xs-5'>
         <h2 class='list-group-heading'>Spotlight</h2>
         <div class="list-group">
           <a class='list-group-item' href="<?php echo $spotlight->getInfoLink(); ?>"> <img class="spotlight-image" src="<?php echo ASSET_PATH;?>/images/<?php echo $spotlight->getImageName(); ?>"> </a></li>
@@ -43,7 +43,7 @@
     </div>
 
     <div class='row'>
-      <div class='col-lg-7'>
+      <div class='col-xs-7'>
         <h2 class="list-group-heading"> Welcome to IMSA </h2>
         <div class='full-width-line'></div>
         <div class="jumbotron">
@@ -59,7 +59,7 @@
         </div>
       </div>
 
-      <div class="col-lg-5">
+      <div class="col-xs-5">
         <h2 class="list-group-heading"> Sponsors </h2>
         <div class="sponsor-div">
           <a class=""><img src="<?php echo ASSET_PATH;?>/images/nsf1.gif" alt="NSF Logo">
