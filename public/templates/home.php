@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/bootstrap/default/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/layout.css">
   <link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/index.css">
+  <script src="<?php echo ASSET_PATH;?>/js/respond.min.js"></script>
 </head>
 
 <body>

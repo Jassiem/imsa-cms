@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/layout.css">
   <link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/side-navigation.css">
   <link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/people.css">
+  <script src="<?php echo ASSET_PATH;?>/js/respond.min.js"></script>
 </head>
 
 <body>

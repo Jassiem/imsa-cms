@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH ?>/bootstrap/admin/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH ?>/css/jquery-ui-1.10.4.custom.min.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH ?>/css/admin_header.css" />
+    <script src="<?php echo ASSET_PATH;?>/js/respond.min.js"></script>
     
     <script src="<?php echo ASSET_PATH?>/js/jquery-2.0.3.min.js"></script>
     <script src="<?php echo ASSET_PATH?>/js/jquery-ui-1.10.4.custom.min.js"></script>
