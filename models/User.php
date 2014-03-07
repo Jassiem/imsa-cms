@@ -82,31 +82,12 @@
         }   
       }
 
-      //checks if object data has errors
-      public function hasErrors(){
-        $usernameErrors; $emailErrors; $passwordErrors;
-        if( $usernameErrors = validateUsername() || $emailErrors = validateEmail() || $passwordErrors = validatePassword()){
-          return array( "hasErrors" => true, "errors" => array( "username" => $usernameErrors, "email" => $emailErrors, 
-                "passwordErrors" => $passwordErrors ) );
-        }
-        else{
-          return false;
-        }
-
-      }
-
       private function validateUsername(){
         return filter_var( $this->username, FILTER_VALIDATE_REGEX, array( "options" => array( "regexp" => "/^[a-zA-z]+[0-9]*{5,20}$/" ) ) );
-
       }
 
       private function validateEmail(){
         return filter_var( $this->email, FILTER_VALIDATE_EMAIL );
-      }
-
-      //check if password and confirm_password are the same
-      private function validatePassword(){
-        return $this->password === $this->confirm_password;
       }
 
       private function generateSalt(){

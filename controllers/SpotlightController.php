@@ -6,7 +6,7 @@
     private $pageInformation;
 
     function __construct(){
-      ToroHook::add("before_handler", 'SessionController::checkLogin');
+      ToroHook::add('before_handler', 'SessionController::checkLogin');
     }
 
     function post() {

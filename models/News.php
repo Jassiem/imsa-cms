@@ -62,7 +62,7 @@ class News
   /**
   * Returns a range of News objects in the DB
   */
-  public static function getList( $numRows=10, $order="last_update DESC" ) {
+  public static function getList( $numRows=10, $order='last_update DESC' ) {
     try{
       $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
       $sql = "SELECT id, title, link, contents FROM news

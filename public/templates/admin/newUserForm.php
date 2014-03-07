@@ -7,7 +7,7 @@
       <input type="hidden" name="newUser" value="true" />
 
       <?php if ( isset( $this->pageInformation['errorMessage'] ) ) { ?>
-        <span class="span span-danger"><?php echo $this->pageInformation['errorMessage'] ?></span>
+        <span class="label label-danger"><?php echo $this->pageInformation['errorMessage'] ?></span>
       <?php } ?>
 
       <div class='well well-lg push-left'>

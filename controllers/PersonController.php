@@ -5,7 +5,7 @@
     private $pageInformation;
 
     function __construct(){
-      ToroHook::add("before_handler", 'SessionController::checkLogin');
+      ToroHook::add('before_handler', 'SessionController::checkLogin');
     }
 
     function post() {
@@ -42,8 +42,8 @@
         $results['people'] = $data;
 
       // render template
-        $pageInfo['pageTitle'] = "All People";
-        include( TEMPLATE_PATH . "/admin/listPeople.php" );
+        $pageInfo['pageTitle'] = 'All People';
+        include( TEMPLATE_PATH . '/admin/listPeople.php' );
     }
 
     public function createPerson(){
@@ -75,7 +75,7 @@
       $person = Person::getById($_POST['editId']);
       if($person->update($newData)){
         //success message and display all articles
-        $this->pageInformation['successMessage'] = "Person successfully updated";
+        $this->pageInformation['successMessage'] = 'Person successfully updated';
         self::listPeople();
       }
       else{

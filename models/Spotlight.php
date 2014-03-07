@@ -134,7 +134,7 @@
     public function update($newData) {
       try{
           // make sure object has id
-          if ( is_null( $this->id ) ) trigger_error ( "Spotlight::update(): Attempt to update a News object that does not have its ID property set.", E_USER_ERROR );
+          if ( is_null( $this->id ) ) trigger_error ( 'Spotlight::update(): Attempt to update a News object that does not have its ID property set.', E_USER_ERROR );
 
           // Update the Spotlight object
           $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );

@@ -64,7 +64,7 @@
     /**
     * Get all Person objects in the DB
     */
-    public static function getAllPeople( $order="last_name ASC" ) {
+    public static function getAllPeople( $order='last_name ASC' ) {
       try{
         $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
         $sql = "SELECT * FROM people WHERE is_deleted=0 ORDER BY " . mysql_escape_string($order);

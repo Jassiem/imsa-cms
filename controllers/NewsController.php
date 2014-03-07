@@ -1,11 +1,11 @@
 <?php 
-  require_once ( "models/News.php" );
+  require_once ( 'models/News.php' );
 
   class NewsController{
     private $pageInformation;
 
     function __construct(){
-      ToroHook::add("before_handler", 'SessionController::checkLogin');
+      ToroHook::add('before_handler', 'SessionController::checkLogin');
     }
 
     //add new news snippet to database
@@ -46,8 +46,8 @@
         $results['news'] = $data;
 
       // render template
-        $pageInfo['pageTitle'] = "All News Snippets";
-        include( TEMPLATE_PATH . "/admin/listNews.php" );
+        $pageInfo['pageTitle'] = 'All News Snippets';
+        include( TEMPLATE_PATH . '/admin/listNews.php' );
     }
 
     public function createNewsSnippet(){
@@ -76,7 +76,7 @@
       $newsSnippet = News::getById($_POST['editId']);
       if($newsSnippet->update($newData)){
         //success message and display all articles
-        $this->pageInformation['successMessage'] = "News successfully updated";
+        $this->pageInformation['successMessage'] = 'News successfully updated';
         self::listNewsSnippets();
       }
       else{

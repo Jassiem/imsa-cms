@@ -1,11 +1,11 @@
 <?php 
-  require_once ( "models/Affiliate.php" );
+  require_once ( 'models/Affiliate.php' );
 
   class AffiliatesAdminController{
     private $pageInformation;
 
     function __construct(){
-      ToroHook::add("before_handler", 'SessionController::checkLogin');
+      ToroHook::add('before_handler', 'SessionController::checkLogin');
     }
 
     //create new affiliate
@@ -50,14 +50,14 @@
         $results['affiliates'] = $data;
 
       // render template
-        $pageInfo['pageTitle'] = "All affiliates";
-        include( TEMPLATE_PATH . "/admin/listAffiliates.php" );
+        $pageInfo['pageTitle'] = 'All affiliates';
+        include( TEMPLATE_PATH . '/admin/listAffiliates.php' );
     }
 
     //add an affiliate
     public function addAffiliate(){
       $pageInfo['pageTitle'] = 'Add Affiliate';
-      include( TEMPLATE_PATH . "/admin/addAffiliate.php" );
+      include( TEMPLATE_PATH . '/admin/addAffiliate.php' );
     }
 
     //delete an affiliate

@@ -2,8 +2,8 @@
   <div class='row'>
     <div class='col-xs-3'></div>
     <div class='col-xs-6'>
-      <form action="/login" method="post">
-        <input type="hidden" name="login" value="true" />
+      <form action='/login' method='post'>
+        <input type='hidden' name='login' value='true' />
      
         <?php if ( isset( $this->pageInformation['errorMessage'] ) ) { ?>
           <span class="label label-danger"><?php echo $this->pageInformation['errorMessage'] ?></span>
@@ -13,13 +13,13 @@
           <h2> Login </h2>
 
             <div class='form-group'>
-              <span class='control-label input-group-addon' for="username">Username</span>
-              <input type="text" name="username" id="username" placeholder="Your admin username" class='form-control' required autofocus maxlength="20" />
+              <span class='control-label input-group-addon' for='username'>Username</span>
+              <input type='text' name='username' id='username' placeholder='Your admin username' class='form-control' required autofocus maxlength='20' />
             </div>
 
             <div class='form-group'>
               <span class='input-group-addon control-label' for="password">Password</span>
-              <input type="password" name="password" id="password" placeholder="Your admin password" class='form-control' required maxlength="20" />
+              <input type='password' name='password' id='password' placeholder='Your admin password' class='form-control' required maxlength='20' />
             </div>
 
             <div class='buffer-20'> </div>
