@@ -27,9 +27,6 @@
             <div class="btn-group">
               <button class='btn btn-primary' type='submit'>Submit</button>
             </div>
-            <div class='pull-right'>
-              <a href='/user?action=reset-user'> Forgot Password? </a>
-            </div>
 
           </div>
       </form>

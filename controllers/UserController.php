@@ -30,7 +30,7 @@
       if($newUser->save())
       {
         $host = $_SERVER['HTTP_ORIGIN'];
-        header("Location: ". $host . "/admin", true, 200);
+        echo '<META HTTP-EQUIV="Refresh" Content="0; URL=/admin">';
       }
       else{
         $this->pageInformation['errorMessage'] = "Unable to create new user.";

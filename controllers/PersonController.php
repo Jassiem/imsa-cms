@@ -48,22 +48,23 @@
 
     public function createPerson(){
           // get person data from post array
-      $personData['first_name'] = $_POST['first_name'];
-      $personData['last_name']  = $_POST['last_name'];
+      $personData['first_name'] = stripslashes($_POST['first_name']);
+      $personData['last_name']  = stripslashes($_POST['last_name']);
       $personData['title']      = $_POST['title'];
       $personData['area']       = $_POST['area'];
       $personData['email']      = $_POST['email'];
-          $person = new Person($personData);
+      
+      $person = new Person($personData);
 
-          if($person->save()){
-            //display success message and list all people
-            $this->pageInformation['successMessage'] = 'Person successfully added.';
-            self::listPeople();
-          }else{
-            //display error message and go to add page
-            $this->pageInformation['errorMessage'] = 'Unable to add person.';
-            include( TEMPLATE_PATH . '/admin/addPerson.php' );
-          }
+      if($person->save()){
+        //display success message and list all people
+        $this->pageInformation['successMessage'] = 'Person successfully added.';
+        self::listPeople();
+      }else{
+        //display error message and go to add page
+        $this->pageInformation['errorMessage'] = 'Unable to add person.';
+        include( TEMPLATE_PATH . '/admin/addPerson.php' );
+      }
     }
 
     public function updatePerson(){

@@ -205,7 +205,9 @@
       }
 
       $uploadedFile = $fileData['tmp_name'];
-      return move_uploaded_file($uploadedFile, UPLOAD_PATH . '/' . $fileName);
+      $destination = UPLOAD_PATH . '/' . $fileName;
+
+      return move_uploaded_file($uploadedFile, $destination);
     }
 
     /*
