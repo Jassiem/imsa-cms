@@ -20,16 +20,6 @@
         <input class='form-control' type="file" name="image_name" id="image_name" required />
       </div>
 
-      <div class='form-group'>
-        <span class='input-group-addon control-label' for="description">Description</span>
-        <textarea  class='form-control' row='3' columns='50' name="description" id="description" form='addSpotlightForm' placeholder="Enter spotlight desciption" required maxlength="350"> </textarea>
-      </div>
-
-      <div class='form-group'>
-        <span class='input-group-addon control-label' for="info_link"> Link to Spotlight</span>
-        <input class='form-control' type="url" name="info_link" id="info_link" placeholder="Copy spotlight url here" required/>
-      </div>
-
       <div class="buttons">
         <button class='btn btn-primary' type="submit" name="addSpotlight"> Submit </button>
       </div>

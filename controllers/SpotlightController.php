@@ -10,15 +10,7 @@
     }
 
     function post() {
-      //update spotlight
-      if( isset( $_POST['editId'] ) ){
-        self::updateSpotlight();
-      }
-      //create spotlight
-      else{
-        self::createSpotlight();
-        }
-     
+      self::createSpotlight();
     }
      
     function get() {
@@ -26,16 +18,12 @@
         $pageInfo['pageTitle'] = 'Add Spotlight';
         include( TEMPLATE_PATH . "/admin/addSpotlight.php" );
       }
-      else if( isset( $_GET['action'] ) && $_GET['action'] == 'edit' ){
-        self::editSpotlight();
-      }
       else if( isset( $_GET['action'] ) && $_GET['action'] == 'delete' ){
         self::deleteSpotlight();
       }
       else{
         self::listAllSpotlights();
       }
-
     }
 
     //get all spotlights and display them
@@ -51,51 +39,25 @@
 
     //create a spotlight
     public function createSpotlight(){
+      //remove forbidden characters from file name
       $spotlightData['image_name'] = $_FILES['image_name']['name'];
-      $spotlightData['description'] = $_POST['description'];
-      $spotlightData['info_link'] = $_POST['info_link'];
-          $spotlight = new Spotlight($spotlightData);
+      $spotlight = new Spotlight($spotlightData);
 
-          //save file data before storing object
-          if(Spotlight::saveImageFile($_FILES['image_name']) && $spotlight->save()){
-            //display success message and list all spotlights
-            $this->pageInformation['successMessage'] = 'Spotlight successfully added.';
-            self::listAllSpotlights();
-          }else{
-            //delete image file since object storage failed
-            Spotlight::deleteImageFile($spotlight->getImageName());
+      $pageInfo['pageTitle'] = 'Add Spotlight';
 
-            //display error message and go to add page
-            $this->pageInformation['errorMessage'] = 'Unable to add spotlight.';
-            include( TEMPLATE_PATH . '/admin/addSpotlight.php' );
-          }
-    }
-
-    //update a spotlight
-    public function updateSpotlight(){
-      $newData['description'] = $_POST['description'];
-      $newData['info_link'] = $_POST['info_link'];
-
-      $spotlight = Spotlight::getById($_POST['editId']);
-      if($spotlight->update($newData)){
-        //success message and display all spotlights
-        $this->pageInformation['successMessage'] = "Spotlight successfully updated";
+      //save file data before storing object
+      if(Spotlight::saveImageFile($_FILES['image_name']) && $spotlight->save()){
+        //display success message and list all spotlights
+        $this->pageInformation['successMessage'] = 'Spotlight successfully added.';
         self::listAllSpotlights();
-      }
-      else{
-        $this->pageInformation['errorMessage'] = 'Unable to update spotlight.';
-        include( TEMPLATE_PATH . '/admin/editSpotlight.php' );
-      }
-    }
+      }else{
+        //delete image file since object storage failed
+        Spotlight::deleteImageFile($spotlight->getImageName());
 
-    //display edit form and populate it with data
-    public function editSpotlight(){
-      //get id from $_GET array
-      $spotlightId = $_GET['spotlightId'];
-      $spotlight = Spotlight::getById($spotlightId);
-
-      $pageInfo['pageTitle'] = 'Edit Page';
-      include( TEMPLATE_PATH . '/admin/editSpotlight.php' );
+        //display error message and go to add page
+        $this->pageInformation['errorMessage'] = 'Unable to add spotlight.';
+        include( TEMPLATE_PATH . '/admin/addSpotlight.php' );
+      }
     }
 
     //delete a spotlight

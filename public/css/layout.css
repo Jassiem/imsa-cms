@@ -13,6 +13,11 @@ html{
   margin: 0 0 15px 0;
 }
 
+.breadcrumb-img {
+  height: 25px;
+  width: 25px;
+}
+
 .brand-secondary{
   color: #A25016;
 }

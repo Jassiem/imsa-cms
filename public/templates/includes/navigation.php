@@ -1,6 +1,7 @@
 <div class="page-header">
   <a href='/home'><img src="<?php echo ASSET_PATH;?>/images/WebsiteBanner-final.jpg"/></a>
 </div>
+
 <nav class="navbar navbar-default" role="navigation">
   <div class='row'>
     <div class='col-xs-6'>

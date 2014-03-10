@@ -2,7 +2,9 @@
 <div class='jumbotron'>
   <h1 style="text-align: center;"> IMSA Admin Home Page </h1>
   <p>  Through this portal you can edit the content that appears on the <a href='/home'>IMSA</a> website.  This content includes people, affiliates, spotlight information, and news articles.  Use the toolbar or the links below to get started.</p>
-  <p>  If you have any questions please contact <a href='mailto: jassiem@clemson.edu'> Jassiem Moore </a>. </p>
+  <p> Not every piece of the IMSA home site can be edited through this portal.  In order to edit the static content you must ssh into <b>access.cs.clemson.edu</b> and change the html manually.</p>
+  <p> The files are located under <b>/web/groups/imsa/htdocs/public/templates</b>.  If you don't want to use ssh, you can make use of an FTP solution such as <a href='https://filezilla-project.org/'> Filezilla.</a></p>
+  <p>  If you have any questions please contact <a href='mailto:jassiem@clemson.edu'> Jassiem Moore </a>. </p>
 </div>
 
 <div class="row">

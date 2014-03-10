@@ -7,7 +7,9 @@
   <link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/bootstrap/default/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/layout.css">
   <link rel="stylesheet" type="text/css" href="<?php echo ASSET_PATH;?>/css/index.css">
-  <script src="<?php echo ASSET_PATH;?>/js/respond.min.js"></script>
+
+  <script src="<?php echo ASSET_PATH;?>/js/jquery-2.0.3.min.js"></script>
+  <script src="<?php echo ASSET_PATH;?>/bootstrap/default/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -37,10 +39,18 @@
 
       <div class='col-xs-5'>
         <h2 class='list-group-heading'>Spotlight</h2>
-        <div class="list-group">
-          <a class='list-group-item' href="<?php echo $spotlight->getInfoLink(); ?>"> <img class="spotlight-image" src="<?php echo ASSET_PATH;?>/images/<?php echo $spotlight->getImageName(); ?>"> </a></li>
-          <li class='list-group-item'> <?php echo $spotlight->getDescription(); ?></a>
+
+        <div id="spotlight-carousel" class="carousel slide" data-ride="carousel">
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <?php for($i = 0; $i < count($spotlights); $i++) { ?>
+              <div class="item list-group <?php if($i==0){echo active;} ?>">
+                <li class='list-group-item'><img class='spotlight-image' src="<?php echo ASSET_PATH;?>/images/<?php echo $spotlights[$i]->getImageName(); ?>"></img></li>
+              </div>
+            <?php } ?>
+          </div>
         </div>
+
       </div>
     </div>
 

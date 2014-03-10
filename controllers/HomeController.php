@@ -8,8 +8,7 @@
     public function get(){
       //get dynamic page data
       $newsItems = News::getList(2);
-      $spotlight = Spotlight::getSpotlights(1);
-      $spotlight = $spotlight[0];
+      $spotlights = Spotlight::getSpotlights();
 
       $pageInfo['pageTitle'] = 'Home';
       include(TEMPLATE_PATH . '/home.php');

@@ -19,23 +19,14 @@
     <table class='table'>
       <tr>
         <th>Image Name</th>
-        <th>Description</th>
-        <th>Info Link </th>
+        <!--<th>Description</th>
+        <th>Info Link </th>-->
       </tr>
    
     <?php foreach ( $results['spotlights'] as $spotlight ) { ?>
    
       <tr>
         <td><?php echo $spotlight->getImageName(); ?></td>
-        <td>
-          <?php echo $spotlight->getDescription(); ?>
-        </td>
-        <td>
-          <?php echo $spotlight->getInfoLink(); ?>
-        </td>
-        <td>
-          <a href="/spotlight?action=edit&amp;spotlightId=<?php echo $spotlight->getId()?>"> Edit </a>
-        </td>
         <td>
           <a class='delete' href="/spotlight?action=delete&amp;spotlightId=<?php echo $spotlight->getId()?>"> Delete </a>
         </td>

@@ -3,8 +3,6 @@
   class Spotlight{
     private $id;
     private $image_name;
-    private $description;
-    private $info_link;
 
     /*GETTERS*/
     public function getId(){
@@ -13,12 +11,6 @@
     public function getImageName(){
       return $this->image_name;
     }
-    public function getDescription(){
-      return $this->description;
-    }
-    public function getInfoLink(){
-      return $this->info_link;
-    }
 
     public function __construct($spotlightParams){
       if( isset( $spotlightParams['spotlight_id'] ) ){
@@ -26,12 +18,6 @@
       }
       if( isset( $spotlightParams['image_name'] ) ){
         $this->image_name = $spotlightParams['image_name'];
-      }
-      if( isset( $spotlightParams['description'] ) ){
-        $this->description = $spotlightParams['description'];
-      }
-      if( isset( $spotlightParams['info_link'] ) ){
-        $this->info_link = $spotlightParams['info_link'];
       }
     }
 
@@ -64,7 +50,7 @@
     public static function getSpotlights( $numRows=10, $order="last_update DESC" ) {
       try{
           $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-          $sql = "SELECT spotlight_id, image_name, description, info_link FROM spotlight
+          $sql = "SELECT spotlight_id, image_name FROM spotlight
                   ORDER BY " . mysql_escape_string($order) . " LIMIT :numRows";
        
           $st = $conn->prepare( $sql );
@@ -88,11 +74,9 @@
         }
     }
      
-     
-      /**
-      * Saves the current Spotlight object into the database, and sets its ID property.
-      */
-     
+    /**
+    * Saves the current Spotlight object into the database, and sets its ID property.
+    */
     public function save() {
       try{
           // Does the Spotlight object already have an ID?
@@ -100,12 +84,10 @@
        
           // Insert the Spotlight object
           $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-          $sql = "INSERT INTO spotlight ( image_name, description, info_link ) VALUES ( :image_name, :description, :info_link )";
+          $sql = "INSERT INTO spotlight ( image_name ) VALUES ( :image_name)";
           $st = $conn->prepare ( $sql );
 
           $st->bindValue( ":image_name", $this->image_name, PDO::PARAM_STR );
-          $st->bindValue( ":description", $this->description, PDO::PARAM_STR );
-          $st->bindValue( ":info_link", $this->info_link, PDO::PARAM_STR );
           $st->execute();
           $this->id = $conn->lastInsertId();
 
@@ -124,42 +106,6 @@
           error_log('Unable to connect to the database.  \n' . $e->getMessage());
           return false;
         }   
-    }
-     
-     
-    /**
-    * Updates the current Spotlight object in the database.
-    */
-     
-    public function update($newData) {
-      try{
-          // make sure object has id
-          if ( is_null( $this->id ) ) trigger_error ( 'Spotlight::update(): Attempt to update a News object that does not have its ID property set.', E_USER_ERROR );
-
-          // Update the Spotlight object
-          $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-          $sql = "UPDATE spotlight SET description=:description, info_link=:info_link WHERE spotlight_id=:id";
-          $st = $conn->prepare ( $sql );
-
-          $st->bindValue( ":description", $newData['description'], PDO::PARAM_STR );
-          $st->bindValue( ":info_link", $newData['info_link'], PDO::PARAM_STR );
-          $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
-
-          $st->execute();
-          $conn = null;
-
-          //make sure row was updated
-          if($st->rowCount() > 0){
-            return true;
-          }else{
-            return false;
-          }
-      }
-        catch(PDOException $e){
-          //log message and then return false
-          error_log('Unable to connect to the database.  \n' . $e->getMessage());
-          return false;
-        }
     }
 
     /**
