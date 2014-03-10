@@ -46,3 +46,12 @@
 .ui-button-text{
   color: black;
 }
+
+.jumbotron p {
+  font-size: 18px;
+}
+
+.jumbotron h1 {
+  font-size: 50px;
+  margin-top: -8px;
+}
