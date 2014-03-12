@@ -13,12 +13,17 @@
   list-style-type: none;
 }
 
+.quick-links ul li:hover {
+  list-style-type: circle;
+}
+
 .quick-links a, .general-info a{
   color: #393939;
 }
 
 .quick-links a:hover, .general-info a:hover{
   color: #000;
+  text-decoration: none;
 }
 
 .quick-links h2, .general-info h2{
@@ -26,7 +31,7 @@
   border-bottom: 1px dotted #000;
   width: 100%;
   margin-top: 16px;
-  color: #4B6EB1;
+  color: #04235F;
 }
 
 .general-info {
