@@ -7,8 +7,9 @@
 .list-group-heading{
   display: inline-block;
   font-size: 18px;
-  font-family: Arial, sans-serif;
-  color: #A25016;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #F60;
+  /*color: #A25016;*/
 }
 
 .list-group, .list-group-item{

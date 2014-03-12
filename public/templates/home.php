@@ -17,7 +17,7 @@
     <!--NAVIGATION-->
     <?php include(TEMPLATE_PATH . '/includes/navigation.php');?>
 
-    <div class='row'>
+    <div class='row push-up'>
       <div class='col-xs-3'>
         <h2 class='list-group-heading'>Quick Links</h2>
         <div class='full-width-line'></div>
