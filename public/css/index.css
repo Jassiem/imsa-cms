@@ -9,7 +9,6 @@
   font-size: 18px;
   font-family: Arial, sans-serif;
   color: #A25016;
-  letter-spacing: 2px;
 }
 
 .list-group, .list-group-item{
@@ -21,8 +20,8 @@
 }
 
 .list-group a:hover{
-  font-weight: 500;
-  color: #6A85B8;
+  font-weight: 600;
+  color: #04235F;
 }
 
 .spotlight-image{

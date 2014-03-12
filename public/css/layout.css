@@ -62,7 +62,7 @@ nav ul:last-child{
 }
 
 ul.nav > li > a{
-  letter-spacing: 3px;
+  letter-spacing: 1px;
 }
 
 ul.nav li.dropdown:hover > ul.dropdown-menu {

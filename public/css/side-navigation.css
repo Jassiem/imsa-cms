@@ -9,6 +9,10 @@
   padding: 20px 20px 20px 0;
 }
 
+.quick-links ul li {
+  width: 60px;
+}
+
 .quick-links ul, .general-info ul{
   list-style-type: none;
 }
@@ -28,7 +32,7 @@
 
 .quick-links h2, .general-info h2{
   font-size: 16px;
-  border-bottom: 1px dotted #000;
+  border-bottom: 1px solid #000;
   width: 100%;
   margin-top: 16px;
   color: #04235F;
